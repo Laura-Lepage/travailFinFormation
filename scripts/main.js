@@ -1,7 +1,11 @@
-fetch(`https://api.example.com/data`)
-  .then(response => response.json())
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {console.log("Erreur lors de la récup des données :", error);
+//Page Accueil
+
+//Click sur BurgerMenu
+let burgerMenu = document.querySelector('.burgerMenu')
+let menuDown = document.querySelector('.menuDown')
+
+burgerMenu.addEventListener('click', function(){
+  this.classList.toggle('burgerMenuActive')
+  menuDown.classList.toggle('menuDownActive')
+
 })
