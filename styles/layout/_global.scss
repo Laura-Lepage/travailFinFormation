@@ -1,6 +1,10 @@
 body{
-    overflow: hidden;
+    margin: 70px auto 0;
+    @media (min-width: 1201px){
+        margin: 90px auto 0;
+    }
 }
+
 a{
     text-decoration: none;
     &:hover{

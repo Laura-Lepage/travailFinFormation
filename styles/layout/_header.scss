@@ -1,0 +1,33 @@
+header{
+    width: 100vw;
+
+}
+
+.logoBox{
+    width: 100vw;
+    background-color: #faf2dd;
+    text-align: center;
+    img{
+        width: 450px;
+    }
+}
+.teasingBox{
+    margin: 15px 10px;
+    padding: 30px 10px;
+    background-color: #faf2dd;
+    height: 450px;
+    border-radius: 20px;
+    position: relative;
+    z-index: -10;
+    text-align: center;
+    .slug{
+        opacity: 0;
+        transition: 0.5s ease-in-out;
+        margin-bottom: 15px;
+        @include menuTypo(400, 25px)
+    }
+    .slugShow{
+        opacity: 1;
+    
+    }
+}

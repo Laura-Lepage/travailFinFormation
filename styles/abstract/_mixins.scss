@@ -29,3 +29,8 @@
     width: 100%;
     height: 100%;
 }
+@mixin menuTypo ($weight : 400, $size : 40px){
+    font-family: "DM Serif Display", serif;
+    font-weight: $weight;
+    font-size: $size;
+}
