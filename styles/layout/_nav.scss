@@ -7,7 +7,7 @@
     left: 0;
     transition: ease-in-out 0.5s;
     @media (min-width: 1200px){
-        height: 120px;
+        height: 100px;
     }
     .burgerMenu{
     @include absmiddle;
@@ -58,7 +58,7 @@
             left: 50%;
             translate: -50% 0 0;
             a{
-                color: #721230;
+                color: $aubergine;
                 @include menuTypo;
             } 
             a:not(:last-child){
