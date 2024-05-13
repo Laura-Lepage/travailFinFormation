@@ -17,11 +17,16 @@ header{
         font-size: 12px;
         padding-top: 30px;
         letter-spacing: 1.4px;
-        
+        font-family: "Teachers", sans-serif;
+        font-size: 14px;
+        span:not(:last-child)::after{
+            content: '•';
+            margin: 0 5px;
+        }
     }
 }
 .backgroundpict{
-    background: url(../../images/PamSmiling.JPG) center/cover;
+    background: url(../images/PamSmiling.JPG) center/cover;
     width: 100vw;
     height: 50vh;
     position: absolute;
@@ -36,41 +41,47 @@ header{
     }
 }
 .beigeCircle{
-    width: 330px;
+    width: 400px;
     height: 600px;
     border-top-left-radius: 100%;
     background-color: rgb(250, 242, 221, 0.7);
     position: absolute;
-    top: 300px;
+    top: 30%;
     right: 0;
     z-index: -2;
     @media (min-width: 850px){
-        width: 500px;
-        height: 500px;
+        width: 450px;
+        height: 450px;
         border-radius: 50%;
-        top: 39%;
-        right: 1%;
+        top: 30%;
+        left: 2%;
     }
     @media (min-width: 1200px){
         width: 500px;
         height: 500px;
         border-radius: 50%;
-        top: 420px;
+        top: 40%;
         left: 6%;  
     }
 }
 .aubergineCircle{
-    width: 600px;
-    height: 600px;
     background-color: rgb(93, 18, 59, 0.6);
     border-radius: 50%;
     position: absolute;
     top: 50%;
-    right: 5%;
     z-index: -1;
     display: none;
+    @media (min-width: 850px){
+        display: inline; 
+        width: 500px;
+        height: 500px;
+        right: 1%;
+    }
     @media (min-width: 1200px){
         display: inline; 
+        width: 600px;
+        height: 600px;
+        right: 5%;
     }
 }
 
@@ -81,7 +92,7 @@ header{
     padding: 30px 10px;
     position: absolute;
     top: 26%;
-    right: 10px;
+    right: 7%;
     .slug{
         opacity: 0;
         transition: 0.5s ease-in-out;
@@ -94,7 +105,11 @@ header{
     }
     @media (min-width: 850px){
         top: 10%;
-        right: 115px;
+        right: 20%;
+    }
+    @media (min-width: 1200px){
+        top: 10%;
+        right: 23%;
     }
 }
 .arrow{
@@ -104,8 +119,10 @@ header{
     top: 70%;
     left:5%;
     @media (min-width: 850px){
-        top: 70%;
-        left: 20%;
+        top: 68%;
+        left: 2%;
+        z-index: 1;
+        rotate: -105deg;
     }   
     @media (min-width: 1200px){
         width: 300px;
@@ -118,18 +135,17 @@ header{
     text-align: center;
     width: 100px;
     position: absolute;
-    top: 650px;
-    left: 30px;
+    top: 70%;
+    left: 5%;
     rotate: -15deg;
     font-family: "Gochi Hand", cursive;
     @media (min-width: 850px){
-        top: 635px;
-        left: 20%;
+        top: 82%;
+        left: 22%;
     }
     @media (min-width: 1200px){
         top: 90%;
-        left: 37%;
-        
+        left: 37%; 
     }  
 }
 .testbtn{
@@ -141,6 +157,7 @@ header{
     top: 90%;
     left: 50%;
     translate: -50% 0;
+    box-shadow: 3px 3px;
     a{
         @include absmiddle;
         color: $beige;
