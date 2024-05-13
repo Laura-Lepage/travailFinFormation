@@ -1,0 +1,11 @@
+.qlqmotsbckgrd{
+    background-color: $beige;
+    text-align: center;
+    padding: 40px 50px;
+    .qlqmotsboxes{
+        @include minmax (300px)
+    }
+    .qlqmotsbox{
+        padding: 0 20px;
+    }
+}

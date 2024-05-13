@@ -1,12 +1,13 @@
 header{
     width: 100vw;
     height: 100vh;
+    margin-bottom: -50px;
 }
 
 .logoBox{
     width: 100vw;
-    padding: 30px;
-    background-color: #faf2dd;
+    padding: 30px 30px 15px;
+    background-color: $beige;
     text-align: center;
     img{
         width: 250px;
@@ -14,7 +15,9 @@ header{
     .sublogo{
         text-transform: uppercase;
         font-size: 12px;
-        padding-top: 20px;
+        padding-top: 30px;
+        letter-spacing: 1.4px;
+        
     }
 }
 .backgroundpict{
@@ -32,17 +35,43 @@ header{
         top: 250px; 
     }
 }
-.circle{
+.beigeCircle{
     width: 330px;
     height: 600px;
     border-top-left-radius: 100%;
-    
-    
     background-color: rgb(250, 242, 221, 0.7);
     position: absolute;
-    top: 260px;
+    top: 300px;
     right: 0;
     z-index: -2;
+    @media (min-width: 850px){
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        top: 39%;
+        right: 1%;
+    }
+    @media (min-width: 1200px){
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        top: 420px;
+        left: 6%;  
+    }
+}
+.aubergineCircle{
+    width: 600px;
+    height: 600px;
+    background-color: rgb(93, 18, 59, 0.6);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    z-index: -1;
+    display: none;
+    @media (min-width: 1200px){
+        display: inline; 
+    }
 }
 
 .teasingBox{
@@ -51,9 +80,8 @@ header{
     margin: 10px;
     padding: 30px 10px;
     position: absolute;
-    top: 33%;
+    top: 26%;
     right: 10px;
-   
     .slug{
         opacity: 0;
         transition: 0.5s ease-in-out;
@@ -64,20 +92,45 @@ header{
     .slugShow{
         opacity: 1;
     }
+    @media (min-width: 850px){
+        top: 10%;
+        right: 115px;
+    }
 }
 .arrow{
-    width: 160px;
-    rotate: -75deg;
+    width: 250px;
+    rotate: -55deg;
     position: absolute;
-    top: 74%;
-    left: 25%;
-    z-index: -1;
+    top: 70%;
+    left:5%;
+    @media (min-width: 850px){
+        top: 70%;
+        left: 20%;
+    }   
+    @media (min-width: 1200px){
+        width: 300px;
+        top: 81%;
+        left: 22%;
+        rotate: 180deg;
+    }  
 }
 .textbeforebtn{
+    text-align: center;
+    width: 100px;
     position: absolute;
-    top: 400px;
-    left: 15px;
-    z-index: -2;
+    top: 650px;
+    left: 30px;
+    rotate: -15deg;
+    font-family: "Gochi Hand", cursive;
+    @media (min-width: 850px){
+        top: 635px;
+        left: 20%;
+    }
+    @media (min-width: 1200px){
+        top: 90%;
+        left: 37%;
+        
+    }  
 }
 .testbtn{
     width: 95%;
@@ -88,9 +141,12 @@ header{
     top: 90%;
     left: 50%;
     translate: -50% 0;
-    z-index: -2;
     a{
         @include absmiddle;
-        color: #faf2dd;
+        color: $beige;
+    }
+    @media (min-width: 1200px){
+        top: 80%;
+        width: 30%;; 
     }
 }

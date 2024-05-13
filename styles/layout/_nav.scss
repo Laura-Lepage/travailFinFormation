@@ -42,7 +42,7 @@
     .menuDown{
     width: 100vw;
     height: 100vh;
-    background-color: #faf2dd;
+    background-color: $beige;
     transform: translateY(-100%);
     transition: 0.5s ease-in-out;
     @media (min-width: 1200px){
