@@ -15,7 +15,6 @@ header{
         text-transform: uppercase;
         font-size: 12px;
         padding-top: 20px;
-        
     }
 }
 .backgroundpict{
@@ -30,18 +29,19 @@ header{
         @include whitefilter_before(0.2);
     }  
     @media (min-width: 1200px){
-        top: 250px;
-        
+        top: 250px; 
     }
 }
 .circle{
-    width: 585px;
-    height: 585px;
+    width: 330px;
+    height: 600px;
+    border-top-left-radius: 100%;
+    
+    
     background-color: rgb(250, 242, 221, 0.7);
-    border-radius: 50%;
     position: absolute;
-    top: 340px;
-    left: 120px;
+    top: 260px;
+    right: 0;
     z-index: -2;
 }
 
@@ -51,33 +51,31 @@ header{
     margin: 10px;
     padding: 30px 10px;
     position: absolute;
-    top: 90px;
-    left: 70px;
+    top: 33%;
+    right: 10px;
    
     .slug{
         opacity: 0;
         transition: 0.5s ease-in-out;
-        margin-bottom: 40px;
-        @include menuTypo(400, 25px);
+        margin-bottom: 35px;
+        @include menuTypo(400, 26px);
         text-shadow: 1px 1px #fff;
-        
     }
     .slugShow{
         opacity: 1;
-    
     }
 }
 .arrow{
-    width: 150px;
-    rotate: -40deg;
+    width: 160px;
+    rotate: -75deg;
     position: absolute;
-    top: 650px;
-    left: 100px;
-    z-index: -2;
+    top: 74%;
+    left: 25%;
+    z-index: -1;
 }
 .textbeforebtn{
     position: absolute;
-    top: 775px;
+    top: 400px;
     left: 15px;
     z-index: -2;
 }
@@ -87,13 +85,12 @@ header{
     background-color: $aubergine;
     border-radius: 20px;
     position: absolute;
-    top: 835px;
-    left: 15px;
+    top: 90%;
+    left: 50%;
+    translate: -50% 0;
     z-index: -2;
     a{
         @include absmiddle;
         color: #faf2dd;
-        
-
     }
 }

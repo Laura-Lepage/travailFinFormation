@@ -17,7 +17,7 @@ let lastScrollay = 0
 function handleScroll(){
   let dejaScrollay = Math.max(window.scrollY, 0)
   if (dejaScrollay > lastScrollay){
-    navBox.classList.add('slideMenu')
+    navBox.classList.add('slideMenu') 
   } else {
     navBox.classList.remove('slideMenu')
   }
