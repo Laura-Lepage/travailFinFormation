@@ -3,7 +3,6 @@ header{
     height: 100vh;
     margin-bottom: -50px;
 }
-
 .logoBox{
     width: 100vw;
     padding: 30px 30px 15px;
@@ -41,12 +40,12 @@ header{
     }
 }
 .beigeCircle{
-    width: 400px;
-    height: 600px;
+    width: 300px;
+    height: 400px;
     border-top-left-radius: 100%;
     background-color: rgb(250, 242, 221, 0.7);
     position: absolute;
-    top: 30%;
+    top: 40%;
     right: 0;
     z-index: -2;
     @media (min-width: 850px){
@@ -87,18 +86,19 @@ header{
 
 .teasingBox{
     text-align: center;
-    width: 250px;
+    width: 200px;
     margin: 10px;
     padding: 30px 10px;
     position: absolute;
-    top: 26%;
-    right: 7%;
+    top: 18%;
+    right: 5%;
     .slug{
         opacity: 0;
         transition: 0.5s ease-in-out;
         margin-bottom: 35px;
         @include menuTypo(400, 26px);
         text-shadow: 1px 1px #fff;
+        font-size: 20px;
     }
     .slugShow{
         opacity: 1;
@@ -116,8 +116,8 @@ header{
     width: 250px;
     rotate: -55deg;
     position: absolute;
-    top: 70%;
-    left:5%;
+    top: 65%;
+    left:10%;
     @media (min-width: 850px){
         top: 68%;
         left: 2%;
@@ -135,8 +135,8 @@ header{
     text-align: center;
     width: 100px;
     position: absolute;
-    top: 70%;
-    left: 5%;
+    top: 67%;
+    left: 6%;
     rotate: -15deg;
     font-family: "Gochi Hand", cursive;
     @media (min-width: 850px){
