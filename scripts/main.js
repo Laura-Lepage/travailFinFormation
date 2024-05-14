@@ -69,14 +69,5 @@ window.addEventListener ("scroll", function (){
  
   })
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var controller = new ScrollMagic.Controller();
+
   
-    var scene = new ScrollMagic.Scene({
-      triggerElement: ".balancoirebckgd",
-      triggerHook: "onEnter",
-      duration: "400px"
-    })
-    .setPin(".balancoirebckgd")
-    .addTo(controller);
-  });
