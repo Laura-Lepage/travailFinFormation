@@ -1,17 +1,22 @@
 .approcheBckgrd{
     background-color: $beige;
     text-align: center;
-    padding: 40px 0;
+    padding: 50px 0;
     .approcheBoxes{
         @include minmax (300px);
+        justify-items: center;
     }
     .approcheBox{
-        padding: 0 30px;
+        padding: 15px 30px;
         // h3{
             // span{
             
              // }
         // }
+        width: 325px;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
     }
 }
 .fadeIn{
@@ -27,7 +32,7 @@
 
 .temoignagesBckgd{
     background-color: #fff;
-    padding: 40px 0;
+    padding: 50px 0;
     text-align: center;
     h2{
         margin-bottom: 25px;
@@ -56,11 +61,11 @@
     }
 }
 .balancoirebckgd{
-    background: url(../images/PamBalancoire.JPG) right/cover;
+    position: relative;
     width: 100vw;
     height: 400px;
+    background: url(../images/PamBalancoire.JPG) right/cover;
     background-attachment: fixed;
-    position: relative;
     &::before{
     content:'';
     background-color: rgb(93, 18, 59, 0.5);
