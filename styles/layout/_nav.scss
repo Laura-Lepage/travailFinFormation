@@ -6,13 +6,14 @@
     top: 0;
     left: 0;
     transition: ease-in-out 0.5s;
+    z-index: 100;
     @media (min-width: 1200px){
         height: 100px;
     }
     .burgerMenu{
     @include absmiddle;
     z-index: 10;
-        @media (min-width: 1200px){
+         @media screen and (min-width: 1200px){
             display: none;
         }
         .burgerBar{
@@ -45,7 +46,7 @@
     background-color: $beige;
     transform: translateY(-100%);
     transition: 0.5s ease-in-out;
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         display: none;
     }
         nav{    
@@ -71,7 +72,7 @@
     }
     .menuPrincipal{
         text-align: right;
-        @media (max-width: 1200px){
+        @media screen and (max-width: 1200px){
             display: none;
         }
         width: 100vw;

@@ -1,0 +1,27 @@
+footer{
+    background-color: $beige;
+    height: 400px;
+    padding: 40px 0;
+}
+.reseauxBox{
+    text-align: center;
+    nav{
+        display: flex;
+        justify-content: center;
+    }
+    div{
+        position: relative;
+        background-color: $aubergine;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    a:not(:last-child){
+        margin-right: 15px;
+    }
+    .fa-brands{
+        color: #fff;
+        font-size: 25px;
+        @include absmiddle;
+    }
+}

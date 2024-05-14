@@ -148,22 +148,24 @@ header{
         left: 37%; 
     }  
 }
-.testbtn{
+.headerbtn{
     width: 95%;
     height: 70px;
-    background-color: $aubergine;
-    border-radius: 20px;
     position: absolute;
     top: 90%;
     left: 50%;
     translate: -50% 0;
-    box-shadow: 3px 3px;
-    a{
-        @include absmiddle;
-        color: $beige;
-    }
     @media (min-width: 1200px){
         top: 80%;
         width: 30%;; 
     }
+}
+.auberginebtn{
+    background-color: $aubergine;
+    border-radius: 20px;
+    a{
+        @include absmiddle;
+        color: $beige;
+    }
+
 }
