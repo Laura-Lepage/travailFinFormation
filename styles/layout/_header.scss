@@ -36,7 +36,7 @@ header{
     &::after{
         @include whitefilter_before(0.2);
     }  
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         top: 250px; 
     }
 }
@@ -49,14 +49,14 @@ header{
     top: 30%;
     right: 0;
     z-index: -2;
-    @media (min-width: 850px){
+    @media screen and (min-width: 820px){
         width: 450px;
         height: 450px;
         border-radius: 50%;
         top: 30%;
         left: 2%;
     }
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         width: 500px;
         height: 500px;
         border-radius: 50%;
@@ -71,17 +71,18 @@ header{
     top: 50%;
     z-index: -1;
     display: none;
-    @media (min-width: 850px){
+    @media screen and (min-width: 820px){
         display: inline; 
         width: 500px;
         height: 500px;
         right: 1%;
     }
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         display: inline; 
         width: 600px;
         height: 600px;
         right: 5%;
+        transition: 0.5s ease-in-out;
     }
 }
 
@@ -103,11 +104,11 @@ header{
     .slugShow{
         opacity: 1;
     }
-    @media (min-width: 850px){
+    @media screen and (min-width: 820px){
         top: 10%;
         right: 20%;
     }
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         top: 10%;
         right: 23%;
     }
@@ -118,13 +119,13 @@ header{
     position: absolute;
     top: 70%;
     left:5%;
-    @media (min-width: 850px){
+    @media screen and (min-width: 820px){
         top: 68%;
         left: 2%;
         z-index: 1;
         rotate: -105deg;
     }   
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         width: 300px;
         top: 81%;
         left: 22%;
@@ -139,11 +140,11 @@ header{
     left: 5%;
     rotate: -15deg;
     font-family: "Gochi Hand", cursive;
-    @media (min-width: 850px){
+    @media screen and (min-width: 820px){
         top: 82%;
         left: 22%;
     }
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         top: 90%;
         left: 37%; 
     }  
@@ -152,20 +153,12 @@ header{
     width: 95%;
     height: 70px;
     position: absolute;
-    bottom: 20px;
+    top: 90%;
     left: 50%;
     translate: -50% 0;
-    @media (min-width: 1200px){
+    @media screen and (min-width: 1200px){
         top: 80%;
         width: 30%;; 
     }
 }
-.auberginebtn{
-    background-color: $aubergine;
-    border-radius: 20px;
-    a{
-        @include absmiddle;
-        color: $beige;
-    }
 
-}

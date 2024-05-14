@@ -2,7 +2,7 @@ body{
     width: 100vw;
     overflow-x: hidden;
     margin: 70px auto 0;
-    @media (min-width: 1201px){
+    @media screen and (min-width: 1201px){
         margin: 100px auto 0;
     }
 }
@@ -21,4 +21,20 @@ h2{
     font-size: 60px;
     font-optical-sizing: auto;
     margin: 15px;
+}
+.homebtn{
+    background-color: $aubergine;
+    border-radius: 20px;
+    text-transform: uppercase;
+    box-shadow: 0 3px rgb(39, 33, 33, 0.7);
+    a{
+        @include absmiddle;
+        width: 90%;
+        text-align: center;
+        font-family: "Teachers", sans-serif;
+        font-weight: 500;
+        letter-spacing: 1.3px;
+        color: $beige;
+    }
+
 }
