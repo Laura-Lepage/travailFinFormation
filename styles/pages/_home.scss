@@ -64,8 +64,12 @@
     position: relative;
     width: 100vw;
     height: 400px;
-    background: url(../images/PamBalancoire.JPG) right/cover;
+    background-image: url(../images/PamBalancoire.JPG);
+    background-position: right;
     background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover; 
+    -prefix-background-size:cover;
     &::before{
     content:'';
     background-color: rgb(93, 18, 59, 0.5);
