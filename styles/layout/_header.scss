@@ -44,8 +44,8 @@ header{
     }
 }
 .beigeCircle{
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     background-color: rgb(250, 242, 221, 0.7);
     position: absolute;
@@ -163,7 +163,7 @@ header{
         left: 22%;
     }
     @media screen and (min-width: 1200px){
-        top: 90%;
+        top: 96%;
         left: 37%; 
     }  
 }
