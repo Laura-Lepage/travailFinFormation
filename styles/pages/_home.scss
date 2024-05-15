@@ -28,14 +28,14 @@
     }
 }
 //chaque dic de mon approche cachée à la base
-.fadeIn{
+.approcheHide{
     opacity : 0;
     transform: translateY(-20%);
     transition: all 0.5s ease-in-out;
   
 }
 //faire apparaître chaque div de mon approche au scroll
-.fadeIn.visible{
+.approcheHide.approcheShow{
 opacity : 1;
 transform: translateY(0);
 }
@@ -54,7 +54,7 @@ transform: translateY(0);
     }
     .temoignageBox{
         position: relative;
-        width: 400px;
+        width: 450px;
         padding: 10px 30px;
         border-radius: 20px;
         img{
@@ -66,9 +66,20 @@ transform: translateY(0);
             object-fit: cover;
         }
         p{
-            color: $aubergine;
+            padding: 15px 30px;
         }
     }
+}
+.temoignageleft {
+transform: translateX(-40px);
+transition: transform 1s ease-out;
+}
+.temoignageright {
+transform: translateX(40px);
+transition: transform 1s ease-out;
+}
+.temoignagereveal {
+transform: translateX(0);
 }
 
 //div photo balançoire

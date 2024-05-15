@@ -54,24 +54,49 @@ window.addEventListener('scroll', function() {
   aubergineCircle.style.top = newPosition
 })
 
-let elements = document.querySelectorAll(".fadeIn")
+let elementsApproche = document.querySelectorAll(".approcheHide")
+let elementsTemoignageLeft = document.querySelectorAll(".temoignageleft")
+let elementsTemoignageRight = document.querySelectorAll(".temoignageright")
 // easyscroll
 function easyscroll(){
-  elements.forEach((element, index) => {
+  elementsApproche.forEach((element, index) => {
       if((window.scrollY + window.innerHeight) > (element.offsetTop +(element.offsetHeight/2))){
         setTimeout(() => {
-          element.classList.add("visible")
+          element.classList.add("approcheShow")
         }, index * 500)
        
        }     
    })
 }
+function easyscrollLeft(){
+  elementsTemoignageLeft.forEach((element, index) => {
+    if((window.scrollY + window.innerHeight) > (element.offsetTop +(element.offsetHeight/2))){
+      setTimeout(() => {
+        element.classList.add("temoignagereveal")
+      }, index * 500)
+     }     
+ })
+}
+function easyscrollRight(){
+  elementsTemoignageRight.forEach((element, index) => {
+    if((window.scrollY + window.innerHeight) > (element.offsetTop +(element.offsetHeight/2))){
+      setTimeout(() => {
+        element.classList.add("temoignagereveal")
+      }, index * 500)
+     }     
+ })
+}
 
 easyscroll()
+easyscrollLeft()
+easyscrollRight()
+
 window.addEventListener ("scroll", function (){
   easyscroll()
+  easyscrollLeft()
+  easyscrollRight()
  
-  })
+})
 
 
   
