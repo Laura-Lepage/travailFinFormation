@@ -44,7 +44,7 @@ header{
     }
 }
 .beigeCircle{
-    width: 550px;
+    width: 450px;
     height: 450px;
     border-radius: 50%;
     background-color: rgb(250, 242, 221, 0.7);
@@ -59,6 +59,8 @@ header{
         border-radius: 50%;
         top: 30%;
         left: 2%;
+        translate: -2% 0 0;
+        
     }
     @media screen and (min-width: 1200px){
         width: 500px;
@@ -97,7 +99,7 @@ header{
     margin: 10px;
     padding: 30px 10px;
     position: absolute;
-    top: 0;
+    top: -2%;
     left: 50%;
     translate: -50% 0 0;
     .slug{
@@ -131,10 +133,10 @@ header{
 }
 .arrow{
     width: 250px;
-    rotate: -55deg;
+    rotate: -75deg;
     position: absolute;
-    top: 63%;
-    right: 250px;
+    top: 55%;
+    left: 20px;
     @media screen and (min-width: 820px){
         top: 68%;
         left: -1%;
@@ -152,8 +154,8 @@ header{
     text-align: center;
     width: 100px;
     position: absolute;
-    top: 67%;
-    right: 425px;
+    top: 77%;
+    left: 75px;
     rotate: -15deg;
     font-family: "Gochi Hand", cursive;
     @media screen and (min-width: 820px){
