@@ -70,7 +70,6 @@ transform: translateY(0);
     width: 100vw;
     height: 400px;
     background: url(../images/PamBalancoire.JPG) top/cover;
-    background-attachment: scroll;
     @media screen and (min-width: 1200px){
         background-attachment: fixed;
     }
