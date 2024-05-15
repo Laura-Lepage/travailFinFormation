@@ -2,9 +2,13 @@ footer{
     background-color: $beige;
     height: 400px;
     padding: 30px 0;
+    font-family: "Teachers", sans-serif;
     h2{
         font-size: 45px;
         margin: 0 0 25px;
+    }
+    a{
+        color: $aubergine;
     }
 }
 .reseauxBox{
@@ -29,19 +33,29 @@ footer{
         @include absmiddle;
     }
 }
-.navsBox{
-    display: flex;
-    justify-content: center;
-    gap: 3rem;
-    margin: 50px 0;
-    ;
-}
-.reseauxNav{
+
+.menuFooterNav{
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 35px 0;
     a{
-        margin-bottom: 5px;
+        margin-bottom: 10px;
+    }  
+}
+.politicsNav{
+    text-align: center;
+    span:not(:last-child)::after{
+        content: '｜';
+        margin: 0 5px;
     }
+}
+.designedby{
+    background-color: #000;
+    padding: 10px 35px;
+    width: 100vw;
+    color: #fff;
+    text-align: right;
+    font-family: "Teachers", sans-serif;
     
 }

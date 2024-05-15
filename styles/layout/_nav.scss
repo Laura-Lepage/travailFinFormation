@@ -39,10 +39,10 @@
     transition: 0.5s ease-in-out;
     transform: translateY(-5px) rotate(-45deg);
     }
-    //Menu descend au click
+    //Configuration menuDown qui est caché 
     .menuDown{
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background-color: $beige;
     transform: translateY(-100%);
     transition: 0.5s ease-in-out;
@@ -68,9 +68,11 @@
             }
         }
     }
+    //class pour faire descendre le menuDown
     .menuDownActive{
         transform: translateY(0);
     }
+    //menu en desktop
     .menuPrincipal{
         text-align: right;
         @media screen and (max-width: 1200px){
@@ -96,6 +98,7 @@
         } 
     }    
 }
+//class pour faire disparaitre le menu au scroll
 .slideMenu{
     transform: translateY(-100%);
 }

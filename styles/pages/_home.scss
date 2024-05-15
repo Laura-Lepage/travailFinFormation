@@ -1,3 +1,4 @@
+//div mon approche
 .approcheBckgrd{
     background-color: $beige;
     text-align: center;
@@ -19,17 +20,20 @@
         border-bottom-right-radius: 20px;
     }
 }
+//chaque dic de mon approche cachée à la base
 .fadeIn{
     opacity : 0;
     transform: translateY(-20%);
     transition: all 0.5s ease-in-out;
   
-  }
-  .fadeIn.visible{
-    opacity : 1;
-    transform: translateY(0);
-  }
+}
+//faire apparaître chaque div de mon approche au scroll
+.fadeIn.visible{
+opacity : 1;
+transform: translateY(0);
+}
 
+//div témoignages
 .temoignagesBckgd{
     background-color: #fff;
     padding: 50px 0;
@@ -56,20 +60,20 @@
         }
         p{
             color: $aubergine;
-            
         }
     }
 }
+
+//div photo balançoire
 .balancoirebckgd{
     position: relative;
     width: 100vw;
     height: 400px;
-    background-image: url(../images/PamBalancoire.JPG);
-    background-position: right;
-    background-attachment: fixed;
-    background-size: cover;
-    -webkit-background-size: cover; 
-    -prefix-background-size:cover;
+    background: url(../images/PamBalancoire.JPG) top/cover;
+    background-attachment: scroll;
+    @media screen and (min-width: 1200px){
+        background-attachment: fixed;
+    }
     &::before{
     content:'';
     background-color: rgb(93, 18, 59, 0.5);
@@ -96,8 +100,7 @@
             top: 50%;
             p{
                 font-size: 34px;
-            }
-            
+            } 
         }
         @media screen and (min-width: 1200px){
             width: 800px;
@@ -111,6 +114,7 @@
     } 
 }
 
+//div screen app pour relancer call to action
 .rappelbtn{
     background-color: #fff;
     width: 100vw;

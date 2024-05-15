@@ -26,6 +26,10 @@ function handleScroll(){
 
 window.addEventListener('scroll', handleScroll)
 
+
+
+
+
 //Apparition des slug HomePage
 
 window.addEventListener('load', function() {

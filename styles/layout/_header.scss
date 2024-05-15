@@ -4,6 +4,7 @@ header{
     margin-bottom: -50px;
 }
 
+//div beige avec logo PamG Digital
 .logoBox{
     width: 100vw;
     padding: 30px 30px 15px;
@@ -25,6 +26,8 @@ header{
         }
     }
 }
+
+//div photo Pam sourire
 .backgroundpict{
     background: url(../images/PamSmiling.JPG) center/cover;
     width: 100vw;
@@ -42,11 +45,11 @@ header{
 }
 .beigeCircle{
     width: 400px;
-    height: 600px;
+    height: 500px;
     border-top-left-radius: 100%;
     background-color: rgb(250, 242, 221, 0.7);
     position: absolute;
-    top: 30%;
+    top: 40%;
     right: 0;
     z-index: -2;
     @media screen and (min-width: 820px){
@@ -86,42 +89,53 @@ header{
     }
 }
 
+//div avec les questions
 .teasingBox{
     text-align: center;
-    width: 250px;
+    width: 270px;
     margin: 10px;
     padding: 30px 10px;
     position: absolute;
-    top: 26%;
-    right: 7%;
+    top: 17%;
+    right: 3%;
     .slug{
         opacity: 0;
         transition: 0.5s ease-in-out;
         margin-bottom: 35px;
-        @include menuTypo(400, 26px);
+        @include menuTypo(400, 22px);
         text-shadow: 1px 1px #fff;
     }
     .slugShow{
         opacity: 1;
     }
     @media screen and (min-width: 820px){
-        top: 10%;
-        right: 20%;
+        width: 260px;
+        top: 9%;
+        right: 19%;
+        .slug{
+            @include menuTypo(400, 26px);
+
+        }
     }
     @media screen and (min-width: 1200px){
-        top: 10%;
-        right: 23%;
+        width: 300px;
+        top: 12%;
+        right: 18%;
+        .slug{
+            @include menuTypo(400, 26px);
+
+        }
     }
 }
 .arrow{
     width: 250px;
     rotate: -55deg;
     position: absolute;
-    top: 70%;
-    left:5%;
+    top: 63%;
+    right: 250px;
     @media screen and (min-width: 820px){
         top: 68%;
-        left: 2%;
+        left: -1%;
         z-index: 1;
         rotate: -105deg;
     }   
@@ -136,8 +150,8 @@ header{
     text-align: center;
     width: 100px;
     position: absolute;
-    top: 70%;
-    left: 5%;
+    top: 67%;
+    right: 425px;
     rotate: -15deg;
     font-family: "Gochi Hand", cursive;
     @media screen and (min-width: 820px){
