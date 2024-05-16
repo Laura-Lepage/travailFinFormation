@@ -14,7 +14,7 @@ burgerMenu.addEventListener('click', function(){
 let navBox = document.querySelector('.navBox')
 let lastScrollay = 0
 
-function handleScroll(){
+function menuScroll(){
   let dejaScrollay = Math.max(window.scrollY, 0)
   if (dejaScrollay > lastScrollay){
     navBox.classList.add('slideMenu') 
@@ -24,7 +24,7 @@ function handleScroll(){
   lastScrollay = dejaScrollay
 }
 
-window.addEventListener('scroll', handleScroll)
+window.addEventListener('scroll', menuScroll)
 
 //Apparition des slug HomePage
 window.addEventListener('load', function() {
