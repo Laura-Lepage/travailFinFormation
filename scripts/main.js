@@ -4,11 +4,14 @@
 let burgerMenu = document.querySelector('.burgerMenu')
 let menuDown = document.querySelector('.menuDown')
 
-burgerMenu.addEventListener('click', function(){
-  this.classList.toggle('burgerMenuActive')
-  menuDown.classList.toggle('menuDownActive')
-
-})
+if (burgerMenu) {
+  burgerMenu.addEventListener('click', function(){
+    this.classList.toggle('burgerMenuActive')
+    menuDown.classList.toggle('menuDownActive')
+  });
+} else {
+  console.error("L'élément burgerMenu n'a pas été trouvé dans le DOM.");
+}
 
 //Menu disparait au Scroll
 let navBox = document.querySelector('.navBox')
@@ -75,6 +78,51 @@ function handleScroll() {
 handleScroll()
 
 window.addEventListener("scroll", handleScroll)
+
+//cookies
+document.addEventListener('DOMContentLoaded', function() {
+  const cookie = document.querySelector(".cookie");
+  const accept = document.querySelector(".accept");
+  const refuse = document.querySelector(".refuse");
+
+  // Afficher le pop-up
+  cookie.classList.add("cookieShow")
+
+  // Gérer l'événement du bouton Accepter
+  accept.addEventListener('click', function() {
+      // Définir le cookie de consentement
+      Cookies.set('consent', 'true');
+      console.log('Consentement accepté');
+      cookie.style.display = 'none'; 
+  });
+
+  // Gérer l'événement du bouton Refuser
+  refuse.addEventListener('click', function() {
+      Cookies.set('consent', 'false');
+      console.log('Consentement refusé');
+      cookie.style.display = 'none'; 
+  });
+
+  // Vérifier si l'utilisateur a déjà donné son consentement
+  const consent = Cookies.get('consent');
+  if (consent === 'true'|| consent === 'false') {
+      cookie.style.display = 'none';
+  }
+});
+
+//click sur la croix sur page "versmetierideal"
+document.addEventListener("DOMContentLoaded", function() {
+  // Vérifie si le titre de la page est "versmetierideal.html"
+  if (window.location.pathname === "/versmetierideal.html") {
+    const crossButton = document.querySelector(".cross")
+    if (crossButton) {
+      crossButton.addEventListener("click", function() {
+        window.location.href = "index.html"
+      })
+    }
+  }
+})
+
 
 
   

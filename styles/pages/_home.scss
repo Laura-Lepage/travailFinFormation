@@ -142,5 +142,31 @@ transform: translateX(0);
         translate: -50% -50% 0;
     }
 }
+.cookie{
+    background-color: $aubergine;
+    width: 90%;
+    color:#fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 0 0;
+    padding: 25px;
+    border: 1px solid $beige;
+    text-align: center;
+    z-index: 10;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1s ease-out;
+    .policy{
+        width: 55%;
+        margin: 5px auto;
+    }
+}
+.cookieShow{
+    transform: translateY(0);
+    opacity: 1;
 
+}
 
