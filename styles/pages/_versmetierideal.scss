@@ -7,6 +7,8 @@
     position: absolute;
     top: 35px;
     right: 35px;
+    width: 35px;
+    height: 35px;
     cursor: pointer; 
     .crossLine{
         width: 30px;
@@ -27,10 +29,14 @@
     border-radius: 20px;
     @include absmiddle;
     box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
+    position: relative;
     img{
         width: 60px;
         position: absolute;
         bottom: 15px;
         right: 15px;
+    }
+    #questionContainer{
+        @include absmiddle;
     }
 }
