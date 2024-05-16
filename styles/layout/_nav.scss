@@ -7,13 +7,13 @@
     left: 0;
     transition: ease-in-out 0.5s;
     z-index: 100;
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         height: 100px;
     }
     .burgerMenu{
     @include absmiddle;
     z-index: 10;
-         @media screen and (min-width: 1200px){
+         @media screen and (min-width: 1024px){
             display: none;
         }
         .burgerBar{
@@ -46,7 +46,7 @@
     background-color: $beige;
     transform: translateY(-175%);
     transition: 0.5s ease-in-out;
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         display: none;
     }
         nav{    
@@ -75,19 +75,19 @@
     //menu en desktop
     .menuPrincipal{
         text-align: right;
-        @media screen and (max-width: 1200px){
+        @media screen and (max-width: 1024px){
             display: none;
         }
         width: 100vw;
         nav{
             max-width: 1350px;
-            margin: 35px auto;
+            margin: 37px auto;
         }
         a{
             color:#000;
             font-family: "Teachers", sans-serif;
             font-weight: 500;
-            font-size: 24px;
+            font-size: 22px;
             margin-right: 30px;
             padding-bottom: 26px;
             transition: border-bottom 0.3s ease; 

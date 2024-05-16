@@ -32,14 +32,12 @@
     opacity : 0;
     transform: translateY(-20%);
     transition: all 0.5s ease-in-out;
-  
 }
 //faire apparaître chaque div de mon approche au scroll
 .approcheHide.approcheShow{
 opacity : 1;
 transform: translateY(0);
 }
-
 //div témoignages
 .temoignagesBckgd{
     background-color: #fff;
@@ -81,7 +79,6 @@ transition: transform 1s ease-out;
 .temoignagereveal {
 transform: translateX(0);
 }
-
 //div photo balançoire
 .balancoirebckgd{
     position: relative;
@@ -119,7 +116,7 @@ transform: translateX(0);
                 font-size: 34px;
             } 
         }
-        @media screen and (min-width: 1200px){
+        @media screen and (min-width: 1024px){
             width: 800px;
             top: 20%;
             left: 8%;
@@ -130,7 +127,6 @@ transform: translateX(0);
         }
     } 
 }
-
 //div screen app pour relancer call to action
 .rappelbtn{
     background-color: #fff;

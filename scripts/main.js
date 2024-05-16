@@ -26,12 +26,7 @@ function handleScroll(){
 
 window.addEventListener('scroll', handleScroll)
 
-
-
-
-
 //Apparition des slug HomePage
-
 window.addEventListener('load', function() {
   const slugs = document.querySelectorAll('.slug')
   
@@ -47,56 +42,39 @@ window.addEventListener('scroll', function() {
   const aubergineCircle = document.querySelector('.aubergineCircle')
   const scrollY = window.scrollY
 
-  // Calculer la nouvelle position verticale en fonction du scroll
+// Calculer la nouvelle position verticale en fonction du scroll
   const newPosition = `${50 + (scrollY * 0.05)}%` // Ajuste le coefficient selon la vitesse souhaitée
 
-  // Modifier la position verticale de la bulle
+// Modifier la position verticale de la bulle
   aubergineCircle.style.top = newPosition
 })
 
-let elementsApproche = document.querySelectorAll(".approcheHide")
-let elementsTemoignageLeft = document.querySelectorAll(".temoignageleft")
-let elementsTemoignageRight = document.querySelectorAll(".temoignageright")
-// easyscroll
-function easyscroll(){
-  elementsApproche.forEach((element, index) => {
-      if((window.scrollY + window.innerHeight) > (element.offsetTop +(element.offsetHeight/2))){
-        setTimeout(() => {
-          element.classList.add("approcheShow")
-        }, index * 500)
-       
-       }     
-   })
-}
-function easyscrollLeft(){
-  elementsTemoignageLeft.forEach((element, index) => {
-    if((window.scrollY + window.innerHeight) > (element.offsetTop +(element.offsetHeight/2))){
-      setTimeout(() => {
-        element.classList.add("temoignagereveal")
-      }, index * 500)
-     }     
- })
-}
-function easyscrollRight(){
-  elementsTemoignageRight.forEach((element, index) => {
-    if((window.scrollY + window.innerHeight) > (element.offsetTop +(element.offsetHeight/2))){
-      setTimeout(() => {
-        element.classList.add("temoignagereveal")
-      }, index * 500)
-     }     
- })
+//animation sur HomePage
+const elements = {
+  approche: document.querySelectorAll(".approcheHide"),
+  temoignageLeft: document.querySelectorAll(".temoignageleft"),
+  temoignageRight: document.querySelectorAll(".temoignageright"),
 }
 
-easyscroll()
-easyscrollLeft()
-easyscrollRight()
+function easyscroll(elementsList, className) {
+  elementsList.forEach((element, index) => {
+    if (window.scrollY + window.innerHeight > element.offsetTop + element.offsetHeight / 2) {
+      setTimeout(() => {
+        element.classList.add(className)
+      }, index * 400)
+    }
+  })
+}
 
-window.addEventListener ("scroll", function (){
-  easyscroll()
-  easyscrollLeft()
-  easyscrollRight()
- 
-})
+function handleScroll() {
+  easyscroll(elements.approche, "approcheShow")
+  easyscroll(elements.temoignageLeft, "temoignagereveal")
+  easyscroll(elements.temoignageRight, "temoignagereveal")
+}
+
+handleScroll()
+
+window.addEventListener("scroll", handleScroll)
 
 
   

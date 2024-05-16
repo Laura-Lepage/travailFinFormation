@@ -1,9 +1,8 @@
-header{
+.headerIndex{
     width: 100vw;
     height: 100vh;
     margin-bottom: -50px;
 }
-
 //div beige avec logo PamG Digital
 .logoBox{
     width: 100vw;
@@ -26,7 +25,6 @@ header{
         }
     }
 }
-
 //div photo Pam sourire
 .backgroundpict{
     background: url(../images/PamSmiling.JPG) center/cover;
@@ -39,7 +37,7 @@ header{
     &::after{
         @include whitefilter_before(0.2);
     }  
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         top: 255px; 
     }
 }
@@ -62,7 +60,7 @@ header{
         translate: -2% 0 0;
         
     }
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         width: 500px;
         height: 500px;
         border-radius: 50%;
@@ -83,7 +81,7 @@ header{
         height: 500px;
         right: 1%;
     }
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         display: inline; 
         width: 600px;
         height: 600px;
@@ -91,7 +89,6 @@ header{
         transition: 0.5s ease-in-out;
     }
 }
-
 //div avec les questions
 .teasingBox{
     text-align: center;
@@ -121,7 +118,7 @@ header{
 
         }
     }
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         width: 300px;
         top: 12%;
         right: 18%;
@@ -144,7 +141,7 @@ header{
         z-index: 1;
         rotate: -105deg;
     }   
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         width: 250px;
         width: 300px;
         top: 83%;
@@ -164,10 +161,22 @@ header{
         top: 82%;
         left: 22%;
     }
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
+        top: 92%;
+        left: 16%; 
+    }  
+    @media screen and (min-width: 1400px){
+        top: 92%;
+        left: 42%; 
+    } 
+    @media screen and (min-width: 1500px){
+        top: 92%;
+        left: 40%; 
+    } 
+    @media screen and (min-width: 1700px){
         top: 92%;
         left: 38%; 
-    }  
+    } 
 }
 .headerbtn{
     width: 95%;
@@ -176,7 +185,7 @@ header{
     top: 90%;
     left: 50%;
     translate: -50% 0;
-    @media screen and (min-width: 1200px){
+    @media screen and (min-width: 1024px){
         top: 81%;
         width: 30%;; 
     }
