@@ -2,6 +2,7 @@
     background-color: $beige;
     height: 100vh;
     margin: 0;
+    font-family: "Teachers", sans-serif;
 }
 .cross{
     position: absolute;
@@ -24,22 +25,45 @@
 }
 .questionnaireBox{
     background-color: #fff;
-    width: 80%;
-    height: 80%;
+    width: 60%;
+    height: 70%;
     border-radius: 20px;
     @include absmiddle;
     box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
     position: relative;
+    @media screen and (min-width: 1024px){
+        height: 40%;
+    }
     img{
         width: 60px;
         position: absolute;
         bottom: 15px;
         right: 15px;
     }
-    .question {
+    .quiz{
+        @include absmiddle;
+    }
+    .questionBox{
+        text-align: center;
+        p{
+            font-size: 20px;
+        }
+        button{
+            background-color: $aubergine;
+            padding: 10px 40px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        button:not(:last-child){
+            margin-right: 10px;
+        }
+    }
+    .question{
         display: none;
     }
-    .question.active {
+    .question.active{
         display: block;
     }
 }

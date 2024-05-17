@@ -136,10 +136,10 @@ function showResult(result) {
   document.getElementById('resultText').innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.';
 }
 
-function endQuiz() {
+function endQuiz(message) {
   document.getElementById('quiz').style.display = 'none';
   document.getElementById('result').style.display = 'block';
-  document.getElementById('resultText').innerText = 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.';
+  document.getElementById('resultText').innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.';
 }
 
 function restartQuiz() {
