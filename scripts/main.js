@@ -127,17 +127,40 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //click sur la croix sur page "versmetierideal"
+// document.addEventListener("DOMContentLoaded", function() {
+//   // Vérifie si le titre de la page est "versmetierideal.html"
+//   if (window.location.pathname === "/versmetierideal.html") {
+//     const crossButton = document.querySelector(".cross")
+//     if (crossButton) {
+//       crossButton.addEventListener("click", function() {
+//         window.location.href = "index.html"
+//       })
+//     }
+//   }
+// })
 document.addEventListener("DOMContentLoaded", function() {
-  // Vérifie si le titre de la page est "versmetierideal.html"
+  // Vérifier si le script est exécuté
+  console.log("Script chargé.");
+  
+  // Vérifiez si le titre de la page est "versmetierideal.html"
+  console.log("Page actuelle:", window.location.pathname);
+  
   if (window.location.pathname === "/versmetierideal.html") {
-    const crossButton = document.querySelector(".cross")
+    const crossButton = document.querySelector(".cross");
+    
+    // Vérifier si le bouton "cross" est trouvé
+    console.log("Bouton 'cross' trouvé:", crossButton);
+    
     if (crossButton) {
       crossButton.addEventListener("click", function() {
-        window.location.href = "index.html"
-      })
+        console.log("Bouton 'cross' cliqué. Redirection vers index.html");
+        window.location.href = "index.html";
+      });
+    } else {
+      console.error("Bouton 'cross' non trouvé.");
     }
   }
-})
+});
 
 
 //Questionnaire
