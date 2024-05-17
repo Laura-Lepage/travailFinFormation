@@ -85,28 +85,44 @@ document.addEventListener('DOMContentLoaded', function() {
   const accept = document.querySelector(".accept");
   const refuse = document.querySelector(".refuse");
 
+  // Vérifiez si l'élément cookie existe
+  if (!cookie) {
+    console.error("L'élément avec la classe .cookie n'a pas été trouvé dans le DOM.");
+    return;
+  }
+
   // Afficher le pop-up
-  cookie.classList.add("cookieShow")
+  cookie.classList.add("cookieShow");
+
+  // Vérifiez si les boutons existent
+  if (!accept) {
+    console.error("L'élément avec la classe .accept n'a pas été trouvé dans le DOM.");
+    return;
+  }
+  if (!refuse) {
+    console.error("L'élément avec la classe .refuse n'a pas été trouvé dans le DOM.");
+    return;
+  }
 
   // Gérer l'événement du bouton Accepter
   accept.addEventListener('click', function() {
-      // Définir le cookie de consentement
-      Cookies.set('consent', 'true');
-      console.log('Consentement accepté');
-      cookie.style.display = 'none'; 
+    // Définir le cookie de consentement
+    Cookies.set('consent', 'true');
+    console.log('Consentement accepté');
+    cookie.style.display = 'none'; 
   });
 
   // Gérer l'événement du bouton Refuser
   refuse.addEventListener('click', function() {
-      Cookies.set('consent', 'false');
-      console.log('Consentement refusé');
-      cookie.style.display = 'none'; 
+    Cookies.set('consent', 'false');
+    console.log('Consentement refusé');
+    cookie.style.display = 'none'; 
   });
 
   // Vérifier si l'utilisateur a déjà donné son consentement
   const consent = Cookies.get('consent');
-  if (consent === 'true'|| consent === 'false') {
-      cookie.style.display = 'none';
+  if (consent === 'true' || consent === 'false') {
+    cookie.style.display = 'none';
   }
 });
 
