@@ -31,6 +31,7 @@
     @include absmiddle;
     box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
     position: relative;
+   
     @media screen and (min-width: 1024px){
         height: 40%;
     }
