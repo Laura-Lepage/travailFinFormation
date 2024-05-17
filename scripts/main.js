@@ -125,48 +125,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //Questionnaire
-function nextQuestion(answer) {
-  const questionContainer = document.getElementById('questionContainer');
-  const currentQuestion = document.querySelector('#questionContainer > div');
-  
-  if (answer === 'yes') {
-      if (currentQuestion.id === 'question1') {
-          currentQuestion.innerHTML = `
-              <p>Êtes-vous à l'aise en programmation?</p>
-              <button onclick="nextQuestion('yes')">Oui</button>
-              <button onclick="nextQuestion('no')">Non</button>
-          `;
-          currentQuestion.id = 'question2';
-      } else if (currentQuestion.id === 'question2') {
-          currentQuestion.innerHTML = `
-              <p>Avez-vous une analyse mathématique?</p>
-              <button onclick="nextQuestion('yes')">Oui</button>
-              <button onclick="nextQuestion('no')">Non</button>
-          `;
-          currentQuestion.id = 'question3';
-      } else if (currentQuestion.id === 'question3') {
-          currentQuestion.innerHTML = `
-              <p>Êtes-vous créatif?</p>
-              <button onclick="showResult('yes')">Oui</button>
-              <button onclick="showResult('no')">Non</button>
-          `;
-          currentQuestion.id = 'question4';
-      }
-  } else if (answer === 'no') {
-      // Traiter la réponse 'non' si nécessaire
-      console.log("Traitement de la réponse 'Non'");
-  }
+function nextQuestion(current, next) {
+  document.getElementById(current).classList.remove('active');
+  document.getElementById(next).classList.add('active');
 }
 
-function showResult(answer) {
-  const result = document.createElement('p');
-  const questionContainer = document.getElementById('questionContainer');
+function showResult(result) {
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('resultText').innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.';
+}
 
-  if (answer === 'yes') {
-      result.textContent = 'Profil : Développeur web';
-  } else if (answer === 'no') {
-      result.textContent = 'Profil : Autre';
+function endQuiz() {
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+  document.getElementById('resultText').innerText = 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.';
+}
+
+function restartQuiz() {
+  document.getElementById('quiz').style.display = 'block';
+  document.getElementById('result').style.display = 'none';
+  const questions = document.getElementsByClassName('question');
+  for (let i = 0; i < questions.length; i++) {
+      questions[i].classList.remove('active');
   }
-
-  questionContainer.appendChild(result);
+  document.getElementById('question1').classList.add('active');
 }

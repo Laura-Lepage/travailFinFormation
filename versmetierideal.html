@@ -16,19 +16,118 @@
         </div>
         <div class="questionnaireBox">
             <img src="images/PamG-icon.png" alt="PamG_miniLogo">
-            <div id="questionContainer">
-                <div id="question1">
-                    <p>Êtes-vous intéressé par le code et les technologies web?</p>
-                    <button onclick="nextQuestion('yes')">Oui</button>
-                    <button onclick="nextQuestion('no')">Non</button>
+            <div id="quiz">
+                <div class="question active" id="question1">
+                    <p>Aimez-vous travailler avec des ordinateurs et des technologies modernes ?</p>
+                    <button onclick="nextQuestion('question1', 'question2')">Oui</button>
+                    <button onclick="endQuiz()">Non</button>
+                </div>
+                <div class="question" id="question2">
+                    <p>Êtes-vous passionné par la création de sites web et le développement de logiciels ?</p>
+                    <button onclick="nextQuestion('question2', 'question3')">Oui</button>
+                    <button onclick="nextQuestion('question2', 'question5')">Non</button>
+                </div>
+                <div class="question" id="question3">
+                    <p>Aimez-vous écrire du code et résoudre des problèmes techniques ?</p>
+                    <button onclick="nextQuestion('question3', 'question4')">Oui</button>
+                    <button onclick="nextQuestion('question3', 'question5')">Non</button>
+                </div>
+                <div class="question" id="question4">
+                    <p>Aimez-vous travailler avec des langages de programmation comme HTML, CSS, et JavaScript ?</p>
+                    <button onclick="showResult('Web Developer')">Oui</button>
+                    <button onclick="nextQuestion('question4', 'question5')">Non</button>
+                </div>
+                <div class="question" id="question5">
+                    <p>Aimez-vous analyser des données et trouver des tendances ?</p>
+                    <button onclick="nextQuestion('question5', 'question6')">Oui</button>
+                    <button onclick="nextQuestion('question5', 'question9')">Non</button>
+                </div>
+                <div class="question" id="question6">
+                    <p>Aimez-vous utiliser des outils comme SQL, Python ou Excel pour travailler avec des données ?</p>
+                    <button onclick="nextQuestion('question6', 'question7')">Oui</button>
+                    <button onclick="nextQuestion('question6', 'question9')">Non</button>
+                </div>
+                <div class="question" id="question7">
+                    <p>Aimez-vous créer des rapports et visualiser des données pour en tirer des conclusions ?</p>
+                    <button onclick="nextQuestion('question7', 'question8')">Oui</button>
+                    <button onclick="nextQuestion('question7', 'question9')">Non</button>
+                </div>
+                <div class="question" id="question8">
+                    <p>Aimez-vous résoudre des problèmes en utilisant des données quantitatives et qualitatives ?</p>
+                    <button onclick="showResult('Data Analyst')">Oui</button>
+                    <button onclick="nextQuestion('question8', 'question9')">Non</button>
+                </div>
+                <div class="question" id="question9">
+                    <p>Êtes-vous passionné par le marketing digital et les stratégies en ligne ?</p>
+                    <button onclick="nextQuestion('question9', 'question10')">Oui</button>
+                    <button onclick="nextQuestion('question9', 'question13')">Non</button>
+                </div>
+                <div class="question" id="question10">
+                    <p>Aimez-vous planifier et exécuter des campagnes de marketing digital pour attirer et engager des clients ?</p>
+                    <button onclick="nextQuestion('question10', 'question11')">Oui</button>
+                    <button onclick="nextQuestion('question10', 'question13')">Non</button>
+                </div>
+                <div class="question" id="question11">
+                    <p>Aimez-vous travailler avec des outils comme Google Analytics, SEO, et les réseaux sociaux ?</p>
+                    <button onclick="nextQuestion('question11', 'question12')">Oui</button>
+                    <button onclick="nextQuestion('question11', 'question13')">Non</button>
+                </div>
+                <div class="question" id="question12">
+                    <p>Aimez-vous mesurer et optimiser les performances des campagnes en ligne ?</p>
+                    <button onclick="showResult('Digital Marketer')">Oui</button>
+                    <button onclick="nextQuestion('question12', 'question13')">Non</button>
+                </div>
+                <div class="question" id="question13">
+                    <p>Aimez-vous concevoir des interfaces utilisateur et créer des visuels attractifs ?</p>
+                    <button onclick="nextQuestion('question13', 'question14')">Oui</button>
+                    <button onclick="nextQuestion('question13', 'question16')">Non</button>
+                </div>
+                <div class="question" id="question14">
+                    <p>Aimez-vous utiliser des outils de design comme Photoshop et Illustrator ?</p>
+                    <button onclick="nextQuestion('question14', 'question15')">Oui</button>
+                    <button onclick="nextQuestion('question14', 'question16')">Non</button>
+                </div>
+                <div class="question" id="question15">
+                    <p>Aimez-vous créer des expériences utilisateurs agréables et intuitives ?</p>
+                    <button onclick="showResult('Web Designer')">Oui</button>
+                    <button onclick="nextQuestion('question15', 'question16')">Non</button>
+                </div>
+                <div class="question" id="question16">
+                    <p>Êtes-vous intéressé par la sécurité informatique et la protection des données ?</p>
+                    <button onclick="nextQuestion('question16', 'question17')">Oui</button>
+                    <button onclick="nextQuestion('question16', 'question19')">Non</button>
+                </div>
+                <div class="question" id="question17">
+                    <p>Aimez-vous analyser des systèmes pour trouver et corriger des vulnérabilités de sécurité ?</p>
+                    <button onclick="nextQuestion('question17', 'question18')">Oui</button>
+                    <button onclick="nextQuestion('question17', 'question19')">Non</button>
+                </div>
+                <div class="question" id="question18">
+                    <p>Aimez-vous rester informé sur les dernières menaces en matière de cybersécurité ?</p>
+                    <button onclick="showResult('Cybersecurity Specialist')">Oui</button>
+                    <button onclick="nextQuestion('question18', 'question19')">Non</button>
+                </div>
+                <div class="question" id="question19">
+                    <p>Aimez-vous organiser et coordonner des projets, et travailler avec des équipes pour atteindre des objectifs ?</p>
+                    <button onclick="nextQuestion('question19', 'question20')">Oui</button>
+                    <button onclick="endQuiz()">Non</button>
+                </div>
+                <div class="question" id="question20">
+                    <p>Aimez-vous planifier chaque étape d'un projet et vous assurer qu'il est terminé dans les délais et selon le budget ?</p>
+                    <button onclick="nextQuestion('question20', 'question21')">Oui</button>
+                    <button onclick="endQuiz()">Non</button>
+                </div>
+                <div class="question" id="question21">
+                    <p>Aimez-vous utiliser des méthodologies de gestion de projet comme Agile ou Scrum ?</p>
+                    <button onclick="showResult('Project Manager')">Oui</button>
+                    <button onclick="endQuiz()">Non</button>
                 </div>
             </div>
-        
-            
-        </div>
-        
-
-
+            <div id="result" style="display:none;">
+                <h2>Résultat :</h2>
+                <p id="resultText"></p>
+                <button onclick="restartQuiz()">Recommencer le quiz</button>
+            </div>
     </div>
     
    

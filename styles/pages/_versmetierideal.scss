@@ -36,7 +36,10 @@
         bottom: 15px;
         right: 15px;
     }
-    #questionContainer{
-        @include absmiddle;
+    .question {
+        display: none;
+    }
+    .question.active {
+        display: block;
     }
 }
