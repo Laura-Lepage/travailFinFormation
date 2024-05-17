@@ -9,7 +9,7 @@
     transition: ease-in-out 0.5s;
     z-index: 100;
     @media screen and (min-width: 1024px){
-        height: 100px;
+        height: 150px;
     }
     .burgerMenu{
     @include absmiddle;
@@ -77,20 +77,19 @@
     .menuPrincipal{
         max-width: 1350px;
         width: 100vw;
-        margin: 39px auto;
-        
+        margin: 89px auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-family: "Teachers", sans-serif;
+        font-size: 20px;
+        font-weight: 500;
         @media screen and (max-width: 1024px){
             display: none;
         }
         nav{
             a{
                 color:#000;
-                font-weight: 500;
-                font-size: 20px;
                 margin-right: 30px;
                 padding-bottom: 26px;
                 transition: border-bottom 0.3s ease; 
@@ -100,14 +99,12 @@
                 }
             } 
         }
-        .connect{
-            display: flex;
-            .fa-user{
-                margin-right: 10px;
-            }
-            a{
-                color: #000;
-            }
+        .metiercallaction{
+            color: $aubergine;
+            padding: 10px 30px;
+            background-color: $beige;
+            border-radius: 20px;
+            box-shadow: 2px 3px rgb(128, 128, 128, 0.5);
         }
     }    
 }

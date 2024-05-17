@@ -3,8 +3,32 @@ header{
     height: 100vh;
     margin: 70px auto -50px;
     @media screen and (min-width: 1025px){
-        margin: 100px auto 0;
+        margin: 150px auto 0;
     }
+}
+.connect{
+    display: none;
+    @media screen and (min-width: 1025px){
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 7%;
+    z-index: 200;
+    padding: 15px 50px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: $aubergine;
+    font-size: 20px;
+    .fa-user{
+        margin-right: 10px;
+    }
+    a{
+        color: #fff;
+    }
+        
+    }
+    
+    
 }
 //div beige avec logo PamG Digital
 .logoBox{
@@ -32,7 +56,7 @@ header{
 .backgroundpict{
     background: url(../images/PamSmiling.JPG) center/cover;
     width: 100vw;
-    height: 50vh;
+    height: 55vh;
     position: absolute;
     top: 135px;
     left: 0;

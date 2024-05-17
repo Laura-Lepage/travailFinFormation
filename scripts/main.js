@@ -64,7 +64,7 @@ function easyscroll(elementsList, className) {
     if (window.scrollY + window.innerHeight > element.offsetTop + element.offsetHeight / 2) {
       setTimeout(() => {
         element.classList.add(className)
-      }, index * 400)
+      }, index * 300)
     }
   })
 }
