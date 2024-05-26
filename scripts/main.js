@@ -141,29 +141,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //Questionnaire
+let quiz = document.querySelector("#quiz")
+let resultId = document.querySelector("#result")
+let resultText = document.querySelector("#resultText")
+let question1 = document.querySelector('#question1')
+
+
 function nextQuestion(current, next) {
-  document.getElementById(current).classList.remove('active');
-  document.getElementById(next).classList.add('active');
+  document.querySelector(current).classList.remove("active")
+  document.querySelector(next).classList.add("active")
 }
 
 function showResult(result) {
-  document.getElementById('quiz').style.display = 'none';
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('resultText').innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.';
+  quiz.style.display = "none"
+  resultId.style.display = "block"
+  resultText.innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.'
 }
 
 function endQuiz(message) {
-  document.getElementById('quiz').style.display = 'none';
-  document.getElementById('result').style.display = 'block';
-  document.getElementById('resultText').innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.';
+  quiz.style.display = "none"
+  resultId.style.display = "block";
+  resultText.innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.'
 }
 
 function restartQuiz() {
-  document.getElementById('quiz').style.display = 'block';
-  document.getElementById('result').style.display = 'none';
-  const questions = document.getElementsByClassName('question');
-  for (let i = 0; i < questions.length; i++) {
-      questions[i].classList.remove('active');
-  }
-  document.getElementById('question1').classList.add('active');
+  quiz.style.display = "block"
+  resultId.style.display = "none"
+  const questions = document.querySelectorAll(".question")
+  questions.forEach(question => question.classList.remove("active"))
+  // const questions = document.getElementsByClassName('question');
+  // for (let i = 0; i < questions.length; i++) {
+  //     questions[i].classList.remove('active');
+  // }
+  question1.classList.add("active")
 }
