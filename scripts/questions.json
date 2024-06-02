@@ -1,130 +1,99 @@
+
 [
     {
         "id": "question1",
         "text": "Aimez-vous travailler avec des ordinateurs et des technologies modernes ?",
-        "answers": [
-            { "text": "Oui", "next": "question2" },
-            { "text": "Non", "end": "Oups ! Le domaine IT n'est peut-être pas fait pour toi. Je t'invite à réserver une session gratuite pour explorer d'autres voies ensemble." }
-        ]
+        "yes": "question2",
+        "no": "Oups ! Le domaine IT n'est peut-être pas fait pour toi. Je t'invite à réserver une session gratuite pour explorer d'autres voies ensemble."
     },
     {
         "id": "question2",
         "text": "Êtes-vous passionné par la création de sites web et le développement de logiciels ?",
-        "answers": [
-            { "text": "Oui", "next": "question3" },
-            { "text": "Non", "next": "question5" }
-        ]
+        "yes": "question3",
+        "no": "question5"
     },
     {
         "id": "question3",
         "text": "Aimez-vous écrire du code et résoudre des problèmes techniques ?",
-        "answers": [
-            { "text": "Oui", "next": "question4" },
-            { "text": "Non", "next": "question5" }
-        ]
+        "yes": "question4",
+        "no": "question5"
     },
     {
         "id": "question4",
         "text": "Aimez-vous travailler avec des langages de programmation comme HTML, CSS, et JavaScript ?",
-        "answers": [
-            { "text": "Oui", "result": "Web Developer" },
-            { "text": "Non", "next": "question5" }
-        ]
+        "yes": "Web Developer",
+        "no": "question5"
     },
     {
         "id": "question5",
         "text": "Aimez-vous analyser des données et trouver des tendances ?",
-        "answers": [
-            { "text": "Oui", "next": "question6" },
-            { "text": "Non", "next": "question9" }
-        ]
+        "yes": "question6",
+        "no": "question9"
     },
     {
         "id": "question6",
         "text": "Aimez-vous utiliser des outils comme SQL, Python ou Excel pour travailler avec des données ?",
-        "answers": [
-            { "text": "Oui", "result": "Data Analyst" },
-            { "text": "Non", "next": "question9" }
-        ]
+        "yes": "Data Analyst",
+        "no": "question9"
     },
     {
         "id": "question9",
         "text": "Êtes-vous passionné par le marketing digital et les stratégies en ligne ?",
-        "answers": [
-            { "text": "Oui", "next": "question10" },
-            { "text": "Non", "next": "question13" }
-        ]
+        "yes": "question10",
+        "no": "question13"
     },
     {
         "id": "question10",
         "text": "Aimez-vous planifier et exécuter des campagnes de marketing digital pour attirer et engager des clients ?",
-        "answers": [
-            { "text": "Oui", "next": "question11" },
-            { "text": "Non", "next": "question13" }
-        ]
+        "yes": "question11",
+        "no": "question13"
     },
     {
         "id": "question11",
         "text": "Aimez-vous travailler avec des outils comme Google Analytics, SEO, et les réseaux sociaux ?",
-        "answers": [
-            { "text": "Oui", "result": "Digital Marketer" },
-            { "text": "Non", "next": "question13" }
-        ]
+        "yes": "Digital Marketer",
+        "no": "question13"
     },
     {
         "id": "question13",
         "text": "Aimez-vous concevoir des interfaces utilisateur et créer des visuels attractifs ?",
-        "answers": [
-            { "text": "Oui", "next": "question14" },
-            { "text": "Non", "next": "question16" }
-        ]
+        "yes": "question14",
+        "no": "question16"
     },
     {
         "id": "question14",
         "text": "Aimez-vous utiliser des outils de design comme Photoshop et Illustrator ?",
-        "answers": [
-            { "text": "Oui", "result": "Web Designer" },
-            { "text": "Non", "next": "question16" }
-        ]
+        "yes": "Web Designer",
+        "no": "question16"
     },
     {
         "id": "question16",
         "text": "Êtes-vous intéressé par la sécurité informatique et la protection des données ?",
-        "answers": [
-            { "text": "Oui", "next": "question17" },
-            { "text": "Non", "next": "question19" }
-        ]
+        "yes": "question17",
+        "no": "question19"
     },
     {
         "id": "question17",
         "text": "Aimez-vous analyser des systèmes pour trouver et corriger des vulnérabilités de sécurité ?",
-        "answers": [
-            { "text": "Oui", "result": "Cybersecurity Specialist" },
-            { "text": "Non", "next": "question19" }
-        ]
+        "yes": "Cybersecurity Specialist",
+        "no": "question19"
     },
     {
         "id": "question19",
         "text": "Aimez-vous organiser et coordonner des projets, et travailler avec des équipes pour atteindre des objectifs ?",
-        "answers": [
-            { "text": "Oui", "next": "question20" },
-            { "text": "Non", "end": "Merci d'avoir complété le quiz. Vous pourriez explorer d'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement." }
-        ]
+        "yes": "question20",
+        "no": "end"
     },
     {
         "id": "question20",
         "text": "Aimez-vous planifier chaque étape d'un projet et vous assurer qu'il est terminé dans les délais et selon le budget ?",
-        "answers": [
-            { "text": "Oui", "next": "question21" },
-            { "text": "Non", "end": "Merci d'avoir complété le quiz. Vous pourriez explorer d'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement." }
-        ]
+        "yes": "question21",
+        "no": "end"
     },
     {
         "id": "question21",
         "text": "Aimez-vous utiliser des méthodologies de gestion de projet comme Agile ou Scrum ?",
-        "answers": [
-            { "text": "Oui", "result": "Project Manager" },
-            { "text": "Non", "end": "Merci d'avoir complété le quiz. Vous pourriez explorer d'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement." }
-        ]
+        "yes": "Project Manager",
+        "no": "end"
     }
 ]

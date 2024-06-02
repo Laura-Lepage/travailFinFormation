@@ -141,37 +141,97 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 //Questionnaire
-let quiz = document.querySelector("#quiz")
-let resultId = document.querySelector("#result")
-let resultText = document.querySelector("#resultText")
-let question1 = document.querySelector('#question1')
+// let quiz = document.querySelector("#quiz")
+// let resultId = document.querySelector("#result")
+// let resultText = document.querySelector("#resultText")
+// let question1 = document.querySelector('#question1')
 
 
-function nextQuestion(current, next) {
-  document.querySelector(current).classList.remove("active")
-  document.querySelector(next).classList.add("active")
+// function nextQuestion(current, next) {
+//   document.querySelector(current).classList.remove("active")
+//   document.querySelector(next).classList.add("active")
+// }
+
+// function showResult(result) {
+//   quiz.style.display = "none"
+//   resultId.style.display = "block"
+//   resultText.innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.'
+// }
+
+// function endQuiz(message) {
+//   quiz.style.display = "none"
+//   resultId.style.display = "block";
+//   resultText.innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.'
+// }
+
+// function restartQuiz() {
+//   quiz.style.display = "block"
+//   resultId.style.display = "none"
+//   const questions = document.querySelectorAll(".question")
+//   questions.forEach(question => question.classList.remove("active"))
+//   // const questions = document.getElementsByClassName('question');
+//   // for (let i = 0; i < questions.length; i++) {
+//   //     questions[i].classList.remove('active');
+//   // }
+//   question1.classList.add("active")
+// }
+let currentQuestionId = 'question1'
+const quizElement = document.querySelector('#quiz')
+const resultElement = document.querySelector('#result')
+const resultTextElement = document.querySelector('#resultText')
+let questions = []
+
+fetch('scripts/questions.json')
+    .then(response => response.json())
+    .then(data => {
+        questions = data
+        loadQuestion(currentQuestionId)
+    })
+
+function loadQuestion(questionId) {
+    const question = questions.find(q => q.id === questionId)
+    if (question) {
+        quizElement.innerHTML = `
+            <div class="questionBox question active" id="${question.id}">
+                <p>${question.text}</p>
+                <button onclick="handleAnswer('${question.id}', 'yes')">Oui</button>
+                <button onclick="handleAnswer('${question.id}', 'no')">Non</button>
+            </div>
+        `;
+    } else {
+        endQuiz();
+    }
+}
+
+function handleAnswer(questionId, answer) {
+    const question = questions.find(q => q.id === questionId)
+    const nextId = question[answer]
+    if (nextId.endsWith('Specialist') || nextId.endsWith('Manager') || nextId.endsWith('Marketer') || nextId.endsWith('Developer') || nextId.endsWith('Designer') || nextId.endsWith('Analyst')) {
+        showResult(nextId)
+    } else if (nextId === 'end') {
+        endQuiz()
+    } else {
+        currentQuestionId = nextId
+        loadQuestion(currentQuestionId)
+    }
 }
 
 function showResult(result) {
-  quiz.style.display = "none"
-  resultId.style.display = "block"
-  resultText.innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.'
+    quizElement.style.display = 'none'
+    resultElement.style.display = 'block'
+    resultTextElement.innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.'
 }
 
 function endQuiz(message) {
-  quiz.style.display = "none"
-  resultId.style.display = "block";
-  resultText.innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.'
+    quizElement.style.display = 'none'
+    resultElement.style.display = 'block'
+    resultTextElement.innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.'
 }
 
 function restartQuiz() {
-  quiz.style.display = "block"
-  resultId.style.display = "none"
-  const questions = document.querySelectorAll(".question")
-  questions.forEach(question => question.classList.remove("active"))
-  // const questions = document.getElementsByClassName('question');
-  // for (let i = 0; i < questions.length; i++) {
-  //     questions[i].classList.remove('active');
-  // }
-  question1.classList.add("active")
+    currentQuestionId = 'question1'
+    quizElement.style.display = 'block'
+    resultElement.style.display = 'none'
+    loadQuestion(currentQuestionId)
 }
+
