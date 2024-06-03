@@ -176,9 +176,13 @@ document.addEventListener("DOMContentLoaded", function() {
 //   question1.classList.add("active")
 // }
 let currentQuestionId = 'question1'
-const quizElement = document.querySelector('#quiz')
-const resultElement = document.querySelector('#result')
-const resultTextElement = document.querySelector('#resultText')
+let quizElement = document.querySelector('#quiz')
+let resultElement = document.querySelector('#result')
+let resultTextElement = document.querySelector('#resultText')
+let resultProfilElement = document.querySelector('#resultProfil')
+let resultExplanationElement = document.querySelector('#resultExplanation')
+let resultPossibilitiesElement = document.querySelector('#resultPossibilities')
+let resultConclusionElement = document.querySelector('#resultConclusion')
 let questions = []
 
 fetch('scripts/questions.json')
@@ -197,41 +201,56 @@ function loadQuestion(questionId) {
                 <button onclick="handleAnswer('${question.id}', 'yes')">Oui</button>
                 <button onclick="handleAnswer('${question.id}', 'no')">Non</button>
             </div>
-        `;
+        `
     } else {
-        endQuiz();
+        endQuiz()
     }
 }
 
 function handleAnswer(questionId, answer) {
-    const question = questions.find(q => q.id === questionId)
-    const nextId = question[answer]
-    if (nextId.endsWith('Specialist') || nextId.endsWith('Manager') || nextId.endsWith('Marketer') || nextId.endsWith('Developer') || nextId.endsWith('Designer') || nextId.endsWith('Analyst')) {
-        showResult(nextId)
-    } else if (nextId === 'end') {
-        endQuiz()
-    } else {
-        currentQuestionId = nextId
-        loadQuestion(currentQuestionId)
-    }
+  const question = questions.find(q => q.id === questionId);
+  const nextId = question[answer];
+
+  if (nextId === 'result') {
+      showResult(question.result, question.explanation, question.possibilities, question.conclusion);
+  } else if (nextId === 'endQuizNo') {
+      endQuiz("Oups ! Le domaine IT n'est peut-être pas fait pour toi. Je t'invite à réserver une session gratuite pour explorer d'autres voies ensemble.");
+  } else if (nextId.startsWith('endQuiz')) {
+      eval(nextId);
+  } else {
+      currentQuestionId = nextId;
+      loadQuestion(currentQuestionId);
+  }
 }
 
-function showResult(result) {
-    quizElement.style.display = 'none'
-    resultElement.style.display = 'block'
-    resultTextElement.innerText = 'Vous devriez envisager une carrière en tant que ' + result + '.'
+function showResult(result, explanation, possibilities, conclusion) {
+  quizElement.style.display = 'none';
+  resultElement.style.display = 'block';
+  resultTextElement.innerText = 'Vous devriez envisager une carrière en tant que';
+  resultProfilElement.innerText = result;
+  resultExplanationElement.innerText = explanation;
+
+  // Affiche les possibilités sur des lignes distinctes
+  resultPossibilitiesElement.innerHTML = possibilities.map(possibility => possibility + '<br>').join('');
+
+  resultConclusionElement.innerText = conclusion;
 }
 
 function endQuiz(message) {
     quizElement.style.display = 'none'
     resultElement.style.display = 'block'
-    resultTextElement.innerText = message || 'Merci d\'avoir complété le quiz. Vous pourriez explorer d\'autres domaines IT ou revisiter vos réponses précédentes pour trouver un meilleur ajustement.'
+    resultTextElement.innerText = message
+    resultExplanationElement.innerText = ''
 }
 
 function restartQuiz() {
-    currentQuestionId = 'question1'
-    quizElement.style.display = 'block'
-    resultElement.style.display = 'none'
-    loadQuestion(currentQuestionId)
+  currentQuestionId = 'question1' // Réinitialise l'identifiant de la question actuelle
+  quizElement.style.display = 'block'
+  resultElement.style.display = 'none'
+  resultProfilElement.innerText = ''
+  resultExplanationElement.innerText = ''
+  resultPossibilitiesElement.innerHTML = ''
+  resultConclusionElement.innerText = ''
+  loadQuestion(currentQuestionId)
 }
 
