@@ -3,7 +3,7 @@ header{
     height: 100vh;
     margin: 70px auto -50px;
     @media screen and (min-width: 1025px){
-        margin: 150px auto 0;
+        margin: 125px auto 0;
     }
 }
 .connect{
@@ -14,7 +14,7 @@ header{
     top: 0;
     right: 7%;
     z-index: 200;
-    padding: 15px 50px;
+    padding: 10px 50px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: $aubergine;
@@ -194,15 +194,15 @@ header{
     }  
     @media screen and (min-width: 1400px){
         top: 92%;
-        left: 42%; 
+        left: 23%; 
     } 
     @media screen and (min-width: 1500px){
         top: 92%;
-        left: 40%; 
+        left: 25%; 
     } 
     @media screen and (min-width: 1700px){
         top: 92%;
-        left: 38%; 
+        left: 28%; 
     } 
 }
 .headerbtn{
@@ -213,8 +213,8 @@ header{
     left: 50%;
     translate: -50% 0;
     @media screen and (min-width: 1024px){
-        top: 81%;
-        width: 30%;; 
+        bottom: 15px;
+        width: 30%;
     }
 }
 
