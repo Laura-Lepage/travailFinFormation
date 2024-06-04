@@ -45,28 +45,25 @@
     width: 100%;
     height: 115vh;
     background-color: $beige;
-    transform: translateY(-275%);
+    transform: translateY(-350%);
     transition: 0.5s ease-in-out;
     @media screen and (min-width: 1024px){
         display: none;
     }
         nav{    
-            width: 100%;
             display: flex;
             flex-direction: column;
             text-align: center;
             position: absolute;
-            top: 10%;
+            top: 50%;
             left: 50%;
-            translate: -50% 0 0;
+            translate: -50% -50% 0;
             a{
                 color: $aubergine;
                 font-family: "DM Serif Display", serif;
                 font-size: 26px; 
                 margin-bottom: 35px;
             } 
-           
-        
             hr{
                 width: 40px;
                 height: 1px;
@@ -74,23 +71,26 @@
                 border: none;
                 rotate: 90deg;
             }
-            a:last-child{
-                margin-top: 75px;
-            }
             .btnMenuDown{
-                margin: 30px auto 75px;
+                margin: 30px 0 50px;
                 background-color: $aubergine;
                 width: 350px;
                 padding: 10px;
                 border-radius: 10px;
                 box-shadow: 0 3px rgb(39, 33, 33, 0.7);
-                a{
-                    color: $beige;
+                color: $beige;
+                &:hover{
+                    background-color: $aubergineHover;
                 }
-            
             }
-        }
-        
+            .fa-user{
+                font-size: 20px;
+            }
+            a:last-child{
+                margin-top: 75px;
+                font-size: 20px;
+            }
+        }  
     }
     //class pour faire descendre le menuDown
     .menuDownActive{
@@ -98,8 +98,6 @@
     }
     //menu en desktop
     .menuPrincipal{
-        max-width: 1250px;
-        width: 100%;
         margin: 65px auto;
         display: flex;
         justify-content: space-between;
@@ -124,15 +122,16 @@
         }
         .metiercallaction{
             color: $aubergine;
-            padding: 10px 30px;
+            padding: 10px 50px;
             background-color: $beige;
             border-radius: 10px;
             box-shadow: 2px 2px rgba(102, 102, 102, 0.5);
+            &:hover{
+                background-color: $beigeHover;
+            }
         }
     }    
 }
-
-
 //class pour faire disparaitre le menu au scroll
 .slideMenu{
     transform: translateY(-100%);

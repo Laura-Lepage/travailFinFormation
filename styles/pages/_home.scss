@@ -2,7 +2,6 @@
 //div mon approche
 .approcheBckgrd{
     background-color: $beige;
-    width: 100%;
     text-align: center;
     padding: 0 0 50px;
     .approcheBoxes{
@@ -23,6 +22,17 @@
             border-radius: 50%;
             padding: 15px;
         }
+        h3{
+            font-family: "Teachers", sans-serif;
+            font-weight: 600;
+            letter-spacing: 1.4px;
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: $aubergine;
+        }
+        p{
+            line-height: 1.3;
+        }
     }
 }
 //chaque dic de mon approche cachée à la base
@@ -36,6 +46,52 @@
 opacity : 1;
 transform: translateY(0);
 }
+.rappelbtn{
+    text-align: center;
+    background-color: #fff;
+    height: 600px;
+    position: relative;
+    .reconnaisBox{
+        width: 450px;
+        text-align: justify;
+        @media screen and (min-width: 820px){
+            width: 700px;
+         
+         }
+         @media screen and (min-width: 1024px){
+            width: 1000px;
+         
+         }
+
+        .fa-caret-right{
+            margin-right: 10px;
+            color: $aubergine;
+        }
+        p{
+            text-transform: uppercase;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+        span{
+            color: $aubergine;
+            font-weight: bold;
+        }
+       
+
+    }
+    @media screen and (min-width: 820px){
+       height: 500px;
+    
+    }
+}
+
+
+
+
+
+
+
+
 //div témoignages
 .temoignagesBckgd{
     background-color: #fff;
@@ -53,14 +109,7 @@ transform: translateY(0);
         width: 450px;
         padding: 10px 30px;
         border-radius: 20px;
-        img{
-            width: 125px;
-            height: 125px;
-            border: 3px solid $aubergine;
-            box-shadow: 20px 5px $beige;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+       
         p{
             padding: 15px 30px;
         }
@@ -126,25 +175,7 @@ transform: translateX(0);
     } 
 }
 //div screen app pour relancer call to action
-.rappelbtn{
-    text-align: center;
-    background-color: #fff;
-    height: 600px;
-    .mainbtn{
-        width: 80%;
-        height: 70px;
-        margin: 50px auto;
-        @media screen and (min-width: 1024px){
-            width: 35%;
-        }
-    }
-    p{
-        text-transform: uppercase;
-    }
-    @media screen and (min-width: 820px){
-       height: 500px;
-    }
-}
+
 
 
 .cookie{
