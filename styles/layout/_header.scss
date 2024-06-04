@@ -57,14 +57,15 @@ header{
         width: 100vw;
         height: 45vh;
         position: absolute;
-        top: 0;
+        top: -50px;
         left: 0;
         z-index: -3;
         &::after{
             @include whitefilter_before(0.2);
         }  
         @media screen and (min-width: 1024px){
-            height: 55vh;  
+            height: 55vh; 
+            top: 0; 
         }
     } 
 }
@@ -221,7 +222,7 @@ header{
     width: 90%;
     height: 70px;
     position: absolute;
-    top: 80%;
+    top: 74%;
     left: 50%;
     translate: -52% 0 0;
     @media screen and (min-width: 1024px){
