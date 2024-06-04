@@ -1,5 +1,6 @@
 body{
     max-width: 100%;
+    width: 100vw;
     overflow-x: hidden;
 }
 a{
@@ -26,6 +27,7 @@ h2{
     border-radius: 20px;
     text-transform: uppercase;
     box-shadow: 0 3px rgb(39, 33, 33, 0.7);
+    position: relative;
     a{
         @include absmiddle;
         width: 90%;
