@@ -1,7 +1,7 @@
 //Barre de navigation et BurgerMenu
 .navBox{
     background-color: #fff;
-    width: 100vw;
+    width: 100%;
     height: 70px;
     position: fixed;
     top: 0;
@@ -42,7 +42,7 @@
     }
     //Configuration menuDown qui est caché 
     .menuDown{
-    width: 100vw;
+    width: 100%;
     height: 115vh;
     background-color: $beige;
     transform: translateY(-275%);
@@ -51,12 +51,12 @@
         display: none;
     }
         nav{    
-            width: 100vw;
+            width: 100%;
             display: flex;
             flex-direction: column;
             text-align: center;
             position: absolute;
-            top: 19%;
+            top: 10%;
             left: 50%;
             translate: -50% 0 0;
             a{
@@ -75,12 +75,12 @@
                 rotate: 90deg;
             }
             a:last-child{
-                margin-top: 100px;
+                margin-top: 75px;
             }
             .btnMenuDown{
-                margin: 30px auto 100px;
+                margin: 30px auto 75px;
                 background-color: $aubergine;
-                width: 400px;
+                width: 350px;
                 padding: 10px;
                 border-radius: 10px;
                 box-shadow: 0 3px rgb(39, 33, 33, 0.7);
@@ -99,7 +99,7 @@
     //menu en desktop
     .menuPrincipal{
         max-width: 1250px;
-        width: 100vw;
+        width: 100%;
         margin: 65px auto;
         display: flex;
         justify-content: space-between;
