@@ -1,14 +1,21 @@
+
 //div mon approche
 .approcheBckgrd{
     background-color: $beige;
+    width: 100vw;
     text-align: center;
-    padding: 50px 0;
+    padding: 0 0 50px;
     .approcheBoxes{
         @include minmax (300px);
         justify-items: center;
     }
     .approcheBox{
         padding: 15px 30px;
+        margin-bottom: 25px;
+        width: 325px;
+        background: linear-gradient(0deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         img{
             width: 90px;
             border: 1px solid #000;
@@ -16,15 +23,6 @@
             border-radius: 50%;
             padding: 15px;
         }
-        // h3{
-            // span{
-            
-             // }
-        // }
-        width: 325px;
-        background: linear-gradient(0deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
     }
 }
 //chaque dic de mon approche cachée à la base
@@ -41,7 +39,7 @@ transform: translateY(0);
 //div témoignages
 .temoignagesBckgd{
     background-color: #fff;
-    padding: 50px 0;
+    padding: 0 0 50px;
     text-align: center;
     h2{
         margin-bottom: 25px;
@@ -129,17 +127,21 @@ transform: translateX(0);
 }
 //div screen app pour relancer call to action
 .rappelbtn{
+    text-align: center;
     background-color: #fff;
     width: 100vw;
     height: 400px;
     position: relative;
     .mainbtn{
-        width: 400px;
-        height: 80px;
+        width: 80%;
+        height: 70px;
         position: absolute;
         top: 75%;
         left: 50%;
         translate: -50% -50% 0;
+        @media screen and (min-width: 1024px){
+            width: 35%;
+        }
     }
 }
 .cookie{

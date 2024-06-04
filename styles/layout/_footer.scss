@@ -1,5 +1,6 @@
 footer{
     background-color: $beige;
+    width: 100vw;
     height: 445px;
     padding: 30px 0;
     font-family: "Teachers", sans-serif;
@@ -9,6 +10,7 @@ footer{
     h2{
         font-size: 45px;
         margin: 0 0 25px;
+        padding: 0;
     }
     a{
         color: $aubergine;

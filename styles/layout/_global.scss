@@ -1,7 +1,5 @@
 body{
     max-width: 100%;
-    width: 100vw;
-    
     overflow-x: hidden;
 }
 a{
@@ -16,9 +14,12 @@ a{
 }
 h2{
     font-family: "Dancing Script", cursive;
-    font-size: 60px;
-    font-optical-sizing: auto;
+    font-size: 50px;
     margin: 0 0 50px;
+    padding: 50px 0 0;
+    @media screen and (min-width: 820px){
+        font-size: 60px;
+    }
 }
 .homebtn{
     background-color: $aubergine;
