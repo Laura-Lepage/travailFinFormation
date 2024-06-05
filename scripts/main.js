@@ -175,7 +175,7 @@ function loadQuestion(questionId) {
             </div>
         `
     } else {
-        endQuiz()
+        endQuiz("Vos réponses n'ont pas permises de déterminer votre profil")
     }
 }
 
@@ -196,6 +196,11 @@ function handleAnswer(questionId, answer) {
 }
 
 function showResult(result, explanation, possibilities, conclusion) {
+
+  if (result === undefined || result === null) {
+    result = "profil indéterminé";
+  }
+  
   questionnaireBox.style.display = 'none'
   resultElement.style.display = 'block';
   resultTextElement.innerText = 'Vous devriez envisager une carrière en tant que';
@@ -225,4 +230,39 @@ function restartQuiz() {
   resultConclusionElement.innerText = ''
   loadQuestion(currentQuestionId)
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  const loadLinks = document.querySelectorAll('.loadLink');
+  const loadingElement = document.getElementById('loading');
+  const progressElement = document.querySelector('.progress');
+  const percentageElement = document.getElementById('percentage');
+  let percentage = 0;
+
+  loadLinks.forEach(function(link) {
+      link.addEventListener('click', function(event) {
+          event.preventDefault(); // Empêcher le comportement par défaut du lien
+          // Rediriger vers chargement.html
+          window.location.href = 'chargement.html';
+      });
+  });
+
+  // Si l'élément "loadingElement" existe (sur la page chargement.html)
+  if (loadingElement) {
+      // Afficher les éléments de chargement
+      loadingElement.classList.remove('hidden');
+
+      const interval = setInterval(() => {
+          if (percentage >= 100) {
+              clearInterval(interval);
+              // Rediriger vers versmetierideal.html après le chargement complet
+              window.location.href = 'versmetierideal.html';
+          } else {
+              percentage += 1;
+              progressElement.style.width = percentage + '%';
+              percentageElement.textContent = percentage + '%';
+          }
+      }, 50); // Ajuster la vitesse de l'animation ici
+  }
+});
+
 
