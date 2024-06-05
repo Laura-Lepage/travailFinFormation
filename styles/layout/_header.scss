@@ -13,7 +13,7 @@ header{
         display: flex;
         position: fixed;
         top: 0;
-        right: 7%;
+        right: 4%;
         z-index: 200;
         padding: 8px 60px 10px;
         border-bottom-left-radius: 15px;
@@ -211,16 +211,10 @@ header{
     } 
 }
 .headerbtn{
-    width: 95%;
-    height: 70px;
     position: absolute;
     top: 90%;
     left: 50%;
-    translate: -50% 0 ;
-    margin: 0 auto;
-    @media screen and (min-width: 1024px){
-        width: 40%;
-    }
-    
+    translate: -50% 0 0;
 }
+
 
