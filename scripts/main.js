@@ -126,21 +126,28 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+
 //click sur la croix sur page "versmetierideal"
 document.addEventListener("DOMContentLoaded", function() {
-  // Vérifie si le titre de la page est "versmetierideal.html"
-  if (window.location.pathname === "/versmetierideal.html") {
-    const crossButton = document.querySelector(".cross")
-    if (crossButton) {
+  // Vérifie si le titre de la page est "versmetierideal.html" ou "prendreunrendezvous.html"
+  const path = window.location.pathname;
+  if (path === "/versmetierideal.html" || path === "/prendreunrendezvous.html") {
+    const crossButtons = document.querySelectorAll(".cross");
+    crossButtons.forEach(function(crossButton) {
       crossButton.addEventListener("click", function() {
-        window.location.href = "index.html"
-      })
-    }
+        window.location.href = "index.html";
+      });
+    });
   }
-})
+});
+
+
+
 
 //Questionnaire
 let currentQuestionId = 'question1'
+let questionnaireBox = document.querySelector(".questionnaireBox")
 let quizElement = document.querySelector('#quiz')
 let resultElement = document.querySelector('#result')
 let resultTextElement = document.querySelector('#resultText')
@@ -163,7 +170,7 @@ function loadQuestion(questionId) {
         quizElement.innerHTML = `
             <div class="questionBox question active" id="${question.id}">
                 <p>${question.text}</p>
-                <button onclick="handleAnswer('${question.id}', 'yes')">Oui</button>
+                <button onclick="handleAnswer('${question.id}', 'yes')" class="btnyes">Oui</button>
                 <button onclick="handleAnswer('${question.id}', 'no')">Non</button>
             </div>
         `
@@ -189,7 +196,7 @@ function handleAnswer(questionId, answer) {
 }
 
 function showResult(result, explanation, possibilities, conclusion) {
-  quizElement.style.display = 'none';
+  questionnaireBox.style.display = 'none'
   resultElement.style.display = 'block';
   resultTextElement.innerText = 'Vous devriez envisager une carrière en tant que';
   resultProfilElement.innerText = result;
@@ -202,15 +209,15 @@ function showResult(result, explanation, possibilities, conclusion) {
 }
 
 function endQuiz(message) {
-    quizElement.style.display = 'none'
-    resultElement.style.display = 'block'
-    resultTextElement.innerText = message
-    resultExplanationElement.innerText = ''
+  questionnaireBox.style.display = 'none'
+  resultElement.style.display = 'block'
+  resultTextElement.innerText = message
+  resultExplanationElement.innerText = ''
 }
 
 function restartQuiz() {
   currentQuestionId = 'question1' // Réinitialise l'identifiant de la question actuelle
-  quizElement.style.display = 'block'
+  questionnaireBox.style.display = 'block'
   resultElement.style.display = 'none'
   resultProfilElement.innerText = ''
   resultExplanationElement.innerText = ''

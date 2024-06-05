@@ -25,7 +25,7 @@
 }
 .questionnaireBox{
     background-color: #fff;
-    width: 60%;
+    width: 70%;
     height: 70%;
     border-radius: 20px;
     @include absmiddle;
@@ -43,29 +43,42 @@
     }
     .quiz{
         @include absmiddle;
+        width: 60%;
+        
     }
     .questionBox{
         text-align: center;
         p{
-            font-size: 20px;
+            font-size: 24px;
+            padding-bottom: 25px;
+            @media screen and (min-width: 500px){
+                padding-bottom: 0;
+            }
         }
         button{
             background-color: $aubergine;
-            padding: 10px 40px;
+            padding: 10px 50px;
             color: #fff;
+            font-size: 20px;
+            letter-spacing: 1.1px;
             border: none;
             cursor: pointer;
             border-radius: 10px;
+            display: block;
+            margin: 10px auto 0;
+            @media screen and (min-width: 500px){
+                display: inline;
+                
+            }
+            &:hover{
+                background-color: $aubergineHover;
+            }
         }
-        button:not(:last-child){
-            margin-right: 10px;
-        }
-    }
-    .question{
-        display: none;
-    }
-    .question.active{
-        display: block;
+        @media screen and (min-width: 650px){
+            .btnyes{
+                margin-right: 3px;
+            } 
+        }   
     }
 }
 #result{
