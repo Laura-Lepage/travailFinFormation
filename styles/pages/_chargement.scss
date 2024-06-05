@@ -1,8 +1,6 @@
 #loading {
     @include absmiddle;
-    
 }
-
 .progress-bar {
     width: 350px;
     background-color: #e0e0e0;
@@ -10,14 +8,12 @@
     border-radius: 5px;
     overflow: hidden;
 }
-
 .progress {
     height: 100%;
     width: 0;
     background-color: $aubergine;
     transition: width 0.1s;
 }
-
 #percentage {
     margin-top: 10px;
     font-size: 16px;

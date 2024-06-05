@@ -145,124 +145,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-//Questionnaire
-let currentQuestionId = 'question1'
-let questionnaireBox = document.querySelector(".questionnaireBox")
-let quizElement = document.querySelector('#quiz')
-let resultElement = document.querySelector('#result')
-let resultTextElement = document.querySelector('#resultText')
-let resultProfilElement = document.querySelector('#resultProfil')
-let resultExplanationElement = document.querySelector('#resultExplanation')
-let resultPossibilitiesElement = document.querySelector('#resultPossibilities')
-let resultConclusionElement = document.querySelector('#resultConclusion')
-let questions = []
 
-fetch('scripts/questions.json')
-    .then(response => response.json())
-    .then(data => {
-        questions = data
-        loadQuestion(currentQuestionId)
-    })
 
-function loadQuestion(questionId) {
-    const question = questions.find(q => q.id === questionId)
-    if (question) {
-        quizElement.innerHTML = `
-            <div class="questionBox question active" id="${question.id}">
-                <p>${question.text}</p>
-                <button onclick="handleAnswer('${question.id}', 'yes')" class="btnyes">Oui</button>
-                <button onclick="handleAnswer('${question.id}', 'no')">Non</button>
-            </div>
-        `
-    } else {
-        endQuiz("Vos réponses n'ont pas permises de déterminer votre profil")
-    }
-}
 
-function handleAnswer(questionId, answer) {
-  const question = questions.find(q => q.id === questionId);
-  const nextId = question[answer];
 
-  if (nextId === 'result') {
-      showResult(question.result, question.explanation, question.possibilities, question.conclusion);
-  } else if (nextId === 'endQuizNo') {
-      endQuiz("Oups ! Le domaine IT n'est peut-être pas fait pour toi. Je t'invite à réserver une session gratuite pour explorer d'autres voies ensemble.");
-  } else if (nextId.startsWith('endQuiz')) {
-      eval(nextId);
-  } else {
-      currentQuestionId = nextId;
-      loadQuestion(currentQuestionId);
-  }
-}
 
-function showResult(result, explanation, possibilities, conclusion) {
 
-  if (result === undefined || result === null) {
-    result = "profil indéterminé";
-  }
-  
-  questionnaireBox.style.display = 'none'
-  resultElement.style.display = 'block';
-  resultTextElement.innerText = 'Vous devriez envisager une carrière en tant que';
-  resultProfilElement.innerText = result;
-  resultExplanationElement.innerText = explanation;
 
-  // Affiche les possibilités sur des lignes distinctes
-  resultPossibilitiesElement.innerHTML = possibilities.map(possibility => possibility + '<br>').join('');
 
-  resultConclusionElement.innerText = conclusion;
-}
-
-function endQuiz(message) {
-  questionnaireBox.style.display = 'none'
-  resultElement.style.display = 'block'
-  resultTextElement.innerText = message
-  resultExplanationElement.innerText = ''
-}
-
-function restartQuiz() {
-  currentQuestionId = 'question1' // Réinitialise l'identifiant de la question actuelle
-  questionnaireBox.style.display = 'block'
-  resultElement.style.display = 'none'
-  resultProfilElement.innerText = ''
-  resultExplanationElement.innerText = ''
-  resultPossibilitiesElement.innerHTML = ''
-  resultConclusionElement.innerText = ''
-  loadQuestion(currentQuestionId)
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const loadLinks = document.querySelectorAll('.loadLink');
-  const loadingElement = document.getElementById('loading');
-  const progressElement = document.querySelector('.progress');
-  const percentageElement = document.getElementById('percentage');
-  let percentage = 0;
-
-  loadLinks.forEach(function(link) {
-      link.addEventListener('click', function(event) {
-          event.preventDefault(); // Empêcher le comportement par défaut du lien
-          // Rediriger vers chargement.html
-          window.location.href = 'chargement.html';
-      });
-  });
-
-  // Si l'élément "loadingElement" existe (sur la page chargement.html)
-  if (loadingElement) {
-      // Afficher les éléments de chargement
-      loadingElement.classList.remove('hidden');
-
-      const interval = setInterval(() => {
-          if (percentage >= 100) {
-              clearInterval(interval);
-              // Rediriger vers versmetierideal.html après le chargement complet
-              window.location.href = 'versmetierideal.html';
-          } else {
-              percentage += 1;
-              progressElement.style.width = percentage + '%';
-              percentageElement.textContent = percentage + '%';
-          }
-      }, 50); // Ajuster la vitesse de l'animation ici
-  }
-});
 
 

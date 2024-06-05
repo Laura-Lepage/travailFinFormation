@@ -32,9 +32,19 @@
     @include absmiddle;
     box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
     position: relative;
-   
     @media screen and (min-width: 1024px){
         height: 40%;
+    }
+    .back{
+        width: 25px;
+        height: 25px;
+        color: $aubergine;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        .fa-arrow-left{
+            font-size: 25px;
+        }
     }
     img{
         width: 60px;
@@ -69,7 +79,6 @@
             margin: 10px auto 0;
             @media screen and (min-width: 500px){
                 display: inline;
-                
             }
             &:hover{
                 background-color: $aubergineHover;
