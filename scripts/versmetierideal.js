@@ -1,7 +1,16 @@
-
-
-
-
+//click sur la croix sur page "versmetierideal"
+document.addEventListener("DOMContentLoaded", function() {
+    // Vérifie si le titre de la page est "versmetierideal.html" ou "prendreunrendezvous.html"
+    const path = window.location.pathname;
+    if (path === "/versmetierideal.html" || path === "/prendreunrendezvous.html") {
+      const crossButtons = document.querySelectorAll(".cross");
+      crossButtons.forEach(function(crossButton) {
+        crossButton.addEventListener("click", function() {
+          window.location.href = "index.html";
+        });
+      });
+    }
+  });
 
 //Questionnaire
 let currentQuestionId = "question1";

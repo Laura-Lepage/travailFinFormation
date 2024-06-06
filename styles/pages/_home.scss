@@ -177,32 +177,51 @@ transform: translateY(0);
         p{
             padding: 15px 30px;
         }
-        .starsFour{
-            .fa-star:not(:last-child){
-                color: $aubergine;
-            }
-            .fa-star:last-child{
-                color: rgba(0, 0, 0, 0.5);
-            }
+        .stars i{
+            color: rgba(0, 0, 0, 0.2);
+            font-size: 18px;
+            transition: color 0.5s ease-in-out;
         }
-        .starsFive{
-            .fa-star{
-                color: $aubergine;
-            }
+        .stars i.aubergine{
+            color: $aubergine;
+            
         }
+
+        // .starsFour{
+        //     .fa-star:not(:last-child){
+        //         color: $aubergine;
+        //     }
+        //     .fa-star:last-child{
+        //         color: rgba(0, 0, 0, 0.5);
+        //     }
+        // }
+        // .starsFive{
+        //     .fa-star{
+        //         color: $aubergine;
+        //     }
+        // }
     }
 }
-.temoignageleft {
-transform: translateX(-40px);
-transition: transform 1s ease-out;
+.temoignageHidden{
+    opacity: 1;
+    transition: opacity 0s ease-out;
+
 }
-.temoignageright {
-transform: translateX(40px);
-transition: transform 1s ease-out;
+.temoignageShow{
+    opacity: 1;
+
 }
-.temoignagereveal {
-transform: translateX(0);
-}
+// .temoignageleft {
+// transform: translateX(-40px);
+// transition: transform 1s ease-out;
+// }
+// .temoignageright {
+// transform: translateX(40px);
+// transition: transform 1s ease-out;
+// }
+// .temoignagereveal {
+// transform: translateX(0);
+// }
 
 
 

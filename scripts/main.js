@@ -52,32 +52,143 @@ window.addEventListener('scroll', function() {
   aubergineCircle.style.top = newPosition
 })
 
+
+
 //animation sur HomePage
+// const elements = {
+//   approche: document.querySelectorAll(".approcheHide"),
+//   temoignageBox: document.querySelectorAll(".temoignageHidden"),
+//   // temoignageRight: document.querySelectorAll(".temoignageright"),
+// }
+
+// function easyscroll(elementsList, className) {
+//   elementsList.forEach((element, index) => {
+//     if (window.scrollY + window.innerHeight > element.offsetTop + element.offsetHeight / 2) {
+//       setTimeout(() => {
+//         element.classList.add(className)
+//       }, index * 300)
+//     }
+//   })
+// }
+
+// function handleScroll() {
+//   easyscroll(elements.approche, "approcheShow")
+//   easyscroll(elements.temoignageBox, "temoignageShow")
+//   // easyscroll(elements.temoignageRight, "temoignagereveal")
+// }
+
+// handleScroll()
+
+// window.addEventListener("scroll", handleScroll)
+
+
+// //Animation sur les étoiles
+// document.addEventListener('DOMContentLoaded', () => {
+//   const starsContainers = document.querySelectorAll('.stars');
+
+//   function startAnimationOnScroll() {
+//     starsContainers.forEach((container, containerIndex) => {
+//       const stars = container.querySelectorAll('.fa-star');
+//       const starsToAnimate = (containerIndex === 1) ? 4 : stars.length; // 4 étoiles pour la deuxième div
+
+//       stars.forEach((star, index) => {
+//         if (index < starsToAnimate) {
+//           setTimeout(() => {
+//             star.classList.add('aubergine');
+//           }, index * 600); // Ajustez le délai ici pour contrôler la vitesse de l'animation
+//         }
+//       });
+//     });
+
+//     // Retirer l'écouteur d'événements une fois que l'animation est déclenchée
+//     window.removeEventListener('scroll', startAnimationOnScroll);
+//   }
+
+//   // Ajouter un écouteur d'événements de défilement
+//   window.addEventListener('scroll', startAnimationOnScroll);
+// });
+
 const elements = {
   approche: document.querySelectorAll(".approcheHide"),
-  temoignageLeft: document.querySelectorAll(".temoignageleft"),
-  temoignageRight: document.querySelectorAll(".temoignageright"),
+  temoignageBox: document.querySelectorAll(".temoignageHidden"),
 }
 
 function easyscroll(elementsList, className) {
   elementsList.forEach((element, index) => {
     if (window.scrollY + window.innerHeight > element.offsetTop + element.offsetHeight / 2) {
       setTimeout(() => {
-        element.classList.add(className)
-      }, index * 300)
+        element.classList.add(className);
+      }, index * 300);
     }
-  })
+  });
 }
 
 function handleScroll() {
-  easyscroll(elements.approche, "approcheShow")
-  easyscroll(elements.temoignageLeft, "temoignagereveal")
-  easyscroll(elements.temoignageRight, "temoignagereveal")
+  easyscroll(elements.approche, "approcheShow");
+  easyscroll(elements.temoignageBox, "temoignageShow");
+
+  const firstTemoignageBox = elements.temoignageBox[0];
+  const temoignageShowFinished = firstTemoignageBox.classList.contains('temoignageShow');
+  if (temoignageShowFinished) {
+    startAnimationOnScroll();
+  }
 }
 
-handleScroll()
+handleScroll();
 
-window.addEventListener("scroll", handleScroll)
+window.addEventListener("scroll", handleScroll);
+
+function startAnimationOnScroll() {
+  const starsContainers = document.querySelectorAll('.stars');
+  let animationTriggered = false;
+
+  function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function animateStarsIfVisible() {
+    if (!animationTriggered) {
+      starsContainers.forEach((container, containerIndex) => {
+        const stars = container.querySelectorAll('.fa-star');
+        const starsToAnimate = (containerIndex === 1) ? 4 : stars.length;
+
+        const containerTop = container.getBoundingClientRect().top;
+        const isVisible = containerTop < window.innerHeight;
+
+        if (isVisible) {
+          stars.forEach((star, index) => {
+            if (index < starsToAnimate) {
+              setTimeout(() => {
+                star.classList.add('aubergine');
+              }, index * 600);
+            }
+          });
+
+          animationTriggered = true;
+        }
+      });
+    }
+  }
+
+  function handleScrollForStars() {
+    animateStarsIfVisible();
+  }
+
+  window.addEventListener("scroll", handleScrollForStars);
+}
+
+
+
+
+
+
+
 
 //cookies
 document.addEventListener('DOMContentLoaded', function() {
@@ -128,19 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-//click sur la croix sur page "versmetierideal"
-document.addEventListener("DOMContentLoaded", function() {
-  // Vérifie si le titre de la page est "versmetierideal.html" ou "prendreunrendezvous.html"
-  const path = window.location.pathname;
-  if (path === "/versmetierideal.html" || path === "/prendreunrendezvous.html") {
-    const crossButtons = document.querySelectorAll(".cross");
-    crossButtons.forEach(function(crossButton) {
-      crossButton.addEventListener("click", function() {
-        window.location.href = "index.html";
-      });
-    });
-  }
-});
+
 
 
 
