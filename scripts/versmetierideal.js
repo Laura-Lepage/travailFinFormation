@@ -1,50 +1,51 @@
-//click sur la croix sur page "versmetierideal"
+//Click sur la croix sur page "versmetierideal"
 document.addEventListener("DOMContentLoaded", function() {
-    // Vérifie si le titre de la page est "versmetierideal.html" ou "prendreunrendezvous.html"
-    const path = window.location.pathname;
-    if (path === "/versmetierideal.html" || path === "/prendreunrendezvous.html") {
-      const crossButtons = document.querySelectorAll(".cross");
-      crossButtons.forEach(function(crossButton) {
-        crossButton.addEventListener("click", function() {
-          window.location.href = "index.html";
-        });
-      });
+    //Vérifie si le titre de la page est "versmetierideal.html" ou "prendreunrendezvous.html"
+    const path = window.location.pathname
+    if (path === "/versmetierideal.html" || path === "/prendreunrendezvous.html"){
+        const crossButtons = document.querySelectorAll(".cross")
+        crossButtons.forEach(function(crossButton){
+            crossButton.addEventListener("click", function(){
+                window.location.href = "index.html"
+            })
+        })
     }
-  });
+})
 
 //Questionnaire
-let currentQuestionId = "question1";
-let questionnaireBox = document.querySelector(".questionnaireBox");
-let quizElement = document.querySelector('#quiz');
-let resultElement = document.querySelector('#result');
-let resultTextElement = document.querySelector('#resultText');
-let resultProfilElement = document.querySelector('#resultProfil');
-let resultExplanationElement = document.querySelector('#resultExplanation');
-let resultPossibilitiesElement = document.querySelector('#resultPossibilities');
-let resultConclusionElement = document.querySelector('#resultConclusion');
-let backButton = document.querySelector('.back'); // Sélectionner le bouton "Retour"
-let questions = [];
-let questionHistory = []; // Tableau pour suivre l'historique des questions
+let currentQuestionId = "question1"
+let questionnaireBox = document.querySelector(".questionnaireBox")
+let quizElement = document.querySelector('.quiz')
+let resultElement = document.querySelector('.result')
+let resultTextElement = document.querySelector('.resultText')
+let resultProfilElement = document.querySelector('.resultProfil')
+let resultExplanationElement = document.querySelector('.resultExplanation')
+let resultPossibilitiesElement = document.querySelector('.resultPossibilities')
+let resultConclusionElement = document.querySelector('.resultConclusion')
+let backButton = document.querySelector('.back')
+let questions = []
+let questionHistory = [] // Tableau pour suivre l'historique des questions
 
 fetch('scripts/questions.json')
     .then(response => response.json())
     .then(data => {
-        questions = data;
-        loadQuestion(currentQuestionId);
-    });
+        questions = data
+        loadQuestion(currentQuestionId)
+    })
 
 function loadQuestion(questionId) {
-    const question = questions.find(q => q.id === questionId);
-    if (question) {
-        quizElement.innerHTML = `
+    const question = questions.find(q => q.id === questionId)
+    if (question){
+        quizElement.innerHTML = 
+        `
             <div class="questionBox question active" id="${question.id}">
                 <p>${question.text}</p>
                 <button onclick="handleAnswer('${question.id}', 'yes')" class="btnyes">Oui</button>
                 <button onclick="handleAnswer('${question.id}', 'no')">Non</button>
             </div>
-        `;
+        `
 
-        // Afficher ou masquer le bouton "Retour" en fonction de l'historique des questions
+        // Afficher ou masquer le bouton "Back"
         if (questionHistory.length > 0) {
             backButton.style.display = 'block';
         } else {

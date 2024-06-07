@@ -29,6 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 progressElement.style.width = percentage + '%'
                 percentageElement.textContent = percentage + '%'
             }
-        }, 50)
+        }, 25)
     }
   })

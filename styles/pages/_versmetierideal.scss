@@ -1,3 +1,4 @@
+//Partie Questionnaire
 .questionnaireBox{
     background-color: #fff;
     width: 70%;
@@ -65,11 +66,84 @@
         }   
     }
 }
-#result{
-    width: 95%;
-    height: 50%;
-    background-color: $beige;
-    text-align: center;
-    padding: 50px;
-    border-radius: 10px;
+
+//Partie Résultat
+.result{
+    display:none;
+    width: 70%;
+    @include absmiddle;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
+    border:none;
+    .resultBox{
+        display: flex;
+        width: 100%;
+        text-align: center; 
+    }
+    .pamBossImg{
+        width: 30%;
+        img{
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        &::after{
+            @include whitefilter_before(0.1);
+        }  
+    }
+    .resultProfilBox{
+        position: relative;
+        width: 70%;
+        .resultProfilBoxCenter{
+            @include absmiddle;
+            width: 80%;
+            font-size: 18px;
+            
+        }
+        .resultText{
+            margin: 0;
+        }
+        .resultProfil{
+            font-size: 34px;
+            font-family: "Gochi Hand", cursive;
+            margin: 20px 0;
+        }
+        .resultExplanation{
+            margin-bottom: 30px;
+        }
+        .btnsProfil{
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            
+            .coachingBtn{
+                width: 350px;
+                height: 60px;
+                background-color: $aubergine;
+                color: $beige;
+                border-radius: 10px;
+                position: relative;
+                &:not(:last-child){
+                    margin-right: 5px;
+                }
+                span{
+                    width: 100%;
+                    @include absmiddle;
+                    font-size: 18px;
+                    div{
+                        font-size: 12px;
+                        margin-top: 5px;
+                        text-transform: uppercase;
+                    }
+                }
+                
+    
+            }
+
+
+
+        }
+        
+
+    }
 }
