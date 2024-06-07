@@ -95,7 +95,11 @@ function showResult(result, explanation, possibilities, conclusion) {
     resultExplanationElement.innerText = explanation;
 
     // Affiche les possibilités sur des lignes distinctes
-    resultPossibilitiesElement.innerHTML = possibilities.map(possibility => possibility + '<br>').join('');
+    let possibilitiesHtml = possibilities.map(possibility => `<li>${possibility}</li>`).join('');
+    resultPossibilitiesElement.innerHTML = 
+    `
+    <ul>${possibilitiesHtml}</ul>
+    `
 
     resultConclusionElement.innerText = conclusion;
 }

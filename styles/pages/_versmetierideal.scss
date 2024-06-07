@@ -108,8 +108,20 @@
             font-family: "Gochi Hand", cursive;
             margin: 20px 0;
         }
+        .resultPossibilities{
+
+            line-height: 1.4;
+            font-size: 16px;
+            .bold{
+                font-weight: bold;
+            }
+        }
         .resultExplanation{
-            margin-bottom: 30px;
+            margin: 15px 0 20px;
+        }
+        .resultConclusion{
+            width: 80%;
+            margin: 20px auto;
         }
         .btnsProfil{
             display: flex;
