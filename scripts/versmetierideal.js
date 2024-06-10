@@ -1,16 +1,66 @@
 //Click sur la croix sur page "versmetierideal"
 document.addEventListener("DOMContentLoaded", function() {
-    //Vérifie si le titre de la page est "versmetierideal.html" ou "prendreunrendezvous.html"
-    const path = window.location.pathname
-    if (path === "/versmetierideal.html" || path === "/prendreunrendezvous.html"){
-        const crossButtons = document.querySelectorAll(".cross")
-        crossButtons.forEach(function(crossButton){
-            crossButton.addEventListener("click", function(){
-                window.location.href = "index.html"
-            })
-        })
-    }
-})
+    const crossButtons = document.querySelectorAll(".cross");
+    crossButtons.forEach(function(crossButton) {
+        crossButton.addEventListener("click", function() {
+            window.location.href = "index.html";
+        });
+    });
+  });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const loadLinks = document.querySelectorAll('.loadLink');
+//     const loadingElement = document.querySelector('#loading');
+//     const progressElement = document.querySelector('.progress');
+//     const percentageElement = document.querySelector('#percentage');
+//     let percentage = 0;
+
+//     loadLinks.forEach(function(link) {
+//         link.addEventListener('click', function(e) {
+//             e.preventDefault(); // Empêche le comportement par défaut du lien
+//             // Redirige vers chargement.html
+//             window.location.href = 'chargement.html';
+//         });
+//     });
+
+//     // Si l'élément "loadingElement" existe (sur la page chargement.html)
+//     if (loadingElement) {
+//         // Afficher les éléments de chargement
+//         loadingElement.classList.remove('hidden');
+
+//         // Vérifier la vitesse de connexion
+//         const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+//         let intervalTime = 25; // Valeur par défaut
+
+//         if (connection) {
+//             const effectiveType = connection.effectiveType;
+//             // Vous pouvez ajuster les seuils de vitesse de connexion comme requis
+//             if (effectiveType === '4g') {
+//                 intervalTime = 12.5; // Divise par 2 pour simuler un chargement plus rapide en 4G
+//             }
+//             // Vous pouvez ajouter d'autres cas selon vos besoins (3g, 2g, etc.)
+//         }
+
+//         const interval = setInterval(() => {
+//             if (percentage >= 100) {
+//                 percentage = 100;
+//                 progressElement.style.width = '100%';
+//                 percentageElement.textContent = '100%';
+//                 clearInterval(interval);
+//                 // Redirige vers versmetierideal.html après une petite pause pour montrer 100% complet
+//                 setTimeout(() => {
+//                     window.location.href = 'versmetierideal.html';
+//                 }, 500); // Ajoute un délai de 500ms pour que l'utilisateur voie la barre pleine
+//             } else {
+//                 percentage += 1;
+//                 progressElement.style.width = percentage + '%';
+//                 percentageElement.textContent = percentage + '%';
+//             }
+//         }, intervalTime);
+//     }
+// });
+
+
 
 //Questionnaire
 let currentQuestionId = "question1"

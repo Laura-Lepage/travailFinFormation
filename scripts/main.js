@@ -52,62 +52,7 @@ window.addEventListener('scroll', function() {
   aubergineCircle.style.top = newPosition
 })
 
-
-
-//animation sur HomePage
-// const elements = {
-//   approche: document.querySelectorAll(".approcheHide"),
-//   temoignageBox: document.querySelectorAll(".temoignageHidden"),
-//   // temoignageRight: document.querySelectorAll(".temoignageright"),
-// }
-
-// function easyscroll(elementsList, className) {
-//   elementsList.forEach((element, index) => {
-//     if (window.scrollY + window.innerHeight > element.offsetTop + element.offsetHeight / 2) {
-//       setTimeout(() => {
-//         element.classList.add(className)
-//       }, index * 300)
-//     }
-//   })
-// }
-
-// function handleScroll() {
-//   easyscroll(elements.approche, "approcheShow")
-//   easyscroll(elements.temoignageBox, "temoignageShow")
-//   // easyscroll(elements.temoignageRight, "temoignagereveal")
-// }
-
-// handleScroll()
-
-// window.addEventListener("scroll", handleScroll)
-
-
-// //Animation sur les étoiles
-// document.addEventListener('DOMContentLoaded', () => {
-//   const starsContainers = document.querySelectorAll('.stars');
-
-//   function startAnimationOnScroll() {
-//     starsContainers.forEach((container, containerIndex) => {
-//       const stars = container.querySelectorAll('.fa-star');
-//       const starsToAnimate = (containerIndex === 1) ? 4 : stars.length; // 4 étoiles pour la deuxième div
-
-//       stars.forEach((star, index) => {
-//         if (index < starsToAnimate) {
-//           setTimeout(() => {
-//             star.classList.add('aubergine');
-//           }, index * 600); // Ajustez le délai ici pour contrôler la vitesse de l'animation
-//         }
-//       });
-//     });
-
-//     // Retirer l'écouteur d'événements une fois que l'animation est déclenchée
-//     window.removeEventListener('scroll', startAnimationOnScroll);
-//   }
-
-//   // Ajouter un écouteur d'événements de défilement
-//   window.addEventListener('scroll', startAnimationOnScroll);
-// });
-
+//Animation sur Approche et les étoiles dans Témoignages
 const elements = {
   approche: document.querySelectorAll(".approcheHide"),
   temoignageBox: document.querySelectorAll(".temoignageHidden"),
@@ -190,52 +135,54 @@ function startAnimationOnScroll() {
 
 
 
-//cookies
-document.addEventListener('DOMContentLoaded', function() {
-  const cookie = document.querySelector(".cookie");
-  const accept = document.querySelector(".accept");
-  const refuse = document.querySelector(".refuse");
+// //cookies
+// document.addEventListener('DOMContentLoaded', function() {
+//   const cookie = document.querySelector(".cookie");
+//   const accept = document.querySelector(".accept");
+//   const refuse = document.querySelector(".refuse");
 
-  // Vérifiez si l'élément cookie existe
-  if (!cookie) {
-    console.error("L'élément avec la classe .cookie n'a pas été trouvé dans le DOM.");
-    return;
-  }
+//   // Vérifiez si l'élément cookie existe
+//   if (!cookie) {
+//     console.error("L'élément avec la classe .cookie n'a pas été trouvé dans le DOM.");
+//     return;
+//   }
 
-  // Afficher le pop-up
-  cookie.classList.add("cookieShow");
+//   // Afficher le pop-up
+//   cookie.classList.add("cookieShow");
 
-  // Vérifiez si les boutons existent
-  if (!accept) {
-    console.error("L'élément avec la classe .accept n'a pas été trouvé dans le DOM.");
-    return;
-  }
-  if (!refuse) {
-    console.error("L'élément avec la classe .refuse n'a pas été trouvé dans le DOM.");
-    return;
-  }
+//   // Vérifiez si les boutons existent
+//   if (!accept) {
+//     console.error("L'élément avec la classe .accept n'a pas été trouvé dans le DOM.");
+//     return;
+//   }
+//   if (!refuse) {
+//     console.error("L'élément avec la classe .refuse n'a pas été trouvé dans le DOM.");
+//     return;
+//   }
 
-  // Gérer l'événement du bouton Accepter
-  accept.addEventListener('click', function() {
-    // Définir le cookie de consentement
-    Cookies.set('consent', 'true');
-    console.log('Consentement accepté');
-    cookie.style.display = 'none'; 
-  });
+//   // Gérer l'événement du bouton Accepter
+//   accept.addEventListener('click', function() {
+//     // Définir le cookie de consentement
+//     Cookies.set('consent', 'true');
+//     console.log('Consentement accepté');
+//     cookie.style.display = 'none'; 
+//   });
 
-  // Gérer l'événement du bouton Refuser
-  refuse.addEventListener('click', function() {
-    Cookies.set('consent', 'false');
-    console.log('Consentement refusé');
-    cookie.style.display = 'none'; 
-  });
+//   // Gérer l'événement du bouton Refuser
+//   refuse.addEventListener('click', function() {
+//     Cookies.set('consent', 'false');
+//     console.log('Consentement refusé');
+//     cookie.style.display = 'none'; 
+//   });
 
-  // Vérifier si l'utilisateur a déjà donné son consentement
-  const consent = Cookies.get('consent');
-  if (consent === 'true' || consent === 'false') {
-    cookie.style.display = 'none';
-  }
-});
+//   // Vérifier si l'utilisateur a déjà donné son consentement
+//   const consent = Cookies.get('consent');
+//   if (consent === 'true' || consent === 'false') {
+//     cookie.style.display = 'none';
+//   }
+// });
+
+
 
 
 
