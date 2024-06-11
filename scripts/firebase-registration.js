@@ -24,7 +24,7 @@ let connexionDiv = document.querySelector('#loginSection')
 
 // Affichage Inscription ou Connexion
 
-connexionPartLink.classList.add('boldLog') //Connexion automatiquement en bold
+inscriptionPartLink.classList.add('boldLog') //Connexion automatiquement en bold
 
 inscriptionPartLink.addEventListener('click', function(e) {
     e.preventDefault();
@@ -43,8 +43,7 @@ connexionPartLink.addEventListener('click', function(e) {
     connexionPartLink.classList.add('boldLog')
 })
 
-// Gestion de la soumission du formulaire d'inscription
-document.querySelector('#signupForm').addEventListener('click', function(e) {
+document.querySelector('#signupForm').addEventListener('submit', function(e) {
     e.preventDefault()
 
     let email = document.querySelector('#signupEmail').value
@@ -52,40 +51,39 @@ document.querySelector('#signupForm').addEventListener('click', function(e) {
     let confirmPassword = document.querySelector('#signupConfirmPassword').value
     let inscriptionConfirmed = document.querySelector('.inscriptionMsg')
 
+    // Vérifier si les mots de passe correspondent
+    if (password !== confirmPassword) {
+        inscriptionConfirmed.textContent = "Les mots de passe ne correspondent pas !";
+        return;
+    }
+
+    // Vérifier la longueur du mot de passe
+    if (password.length < 6) {
+        inscriptionConfirmed.textContent = 'Le mot de passe doit contenir au moins 6 caractères.';
+        return;
+    }
+
     // Créer un nouvel utilisateur avec Firebase
     createUserWithEmailAndPassword(auth, email, password)
+        
         .then(function(userCredential) {
             // Inscription réussie, tu peux rediriger l'utilisateur vers une autre page ou effectuer d'autres actions nécessaires
             console.log("Inscription réussie !");
             inscriptionConfirmed.innerHTML = "Inscription réussie !";
-            window.location.href = 'versmetierideal.html';
+            // window.location.href = 'versmetierideal.html';
+            localStorage.setItem('userLoggedIn', 'true');
         })
         .catch(function(error) {
             // Gestion des erreurs
-    var errorCode = error.code;
-    var errorMessage = error.message;
+            var errorCode = error.code;
+            var errorMessage = error.message;
 
-    if (errorCode === 'auth/email-already-in-use') {
-        inscriptionConfirmed.textContent = 'Tu as déjà un compte.';
-    } else {
-        // Autres erreurs
-        inscriptionConfirmed.textContent = errorMessage;
-        
-        // Vérifier si les mots de passe correspondent
-        if (password !== confirmPassword) {
-            inscriptionConfirmed.textContent = "Les mots de passe ne correspondent pas !";
-            return;
-        }
-        // Vérifier la longueur du mot de passe
-        if (password.length < 6) {
-            inscriptionConfirmed.textContent = 'Le mot de passe doit contenir au moins 6 caractères.';
-            return;
-        }
-    }
-            
-            
-
-            
+            if (errorCode === 'auth/email-already-in-use') {
+                inscriptionConfirmed.textContent = 'Tu as déjà un compte.';
+            } else {
+                // Autres erreurs
+                inscriptionConfirmed.textContent = errorMessage;
+            }
         });
 });
 
@@ -101,24 +99,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     signInWithEmailAndPassword(auth, email, password)
         .then(function(userCredential) {
             // Connexion réussie, tu peux rediriger l'utilisateur vers une autre page ou effectuer d'autres actions nécessaires
-            // Connexion réussie, redirection vers index.html
             console.log("Connexion réussie !");
             localStorage.setItem('userLoggedIn', 'true');
             window.location.href = 'index.html';
-           
-
-            
         })
         .catch(function(error) {
-            // Gestion des erreurs
-            // Gestion des erreurs
-            var errorCode = error.code;
-            var errorMessage = error.message;
 
-            if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password') {
-                connexionConfirmedconnexionConfirmed.textContent = 'Identifiants incorrects.';
-            } else {
-                connexionConfirmed.textContent = errorMessage;
-            }
+            connexionConfirmed.textContent = "Impossible de se connecter au compte. Vérifie que ton adresse e-mail et/ou ton mot de passe soient corrects.";
         });
 });

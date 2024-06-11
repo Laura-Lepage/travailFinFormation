@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Vérifie si l'utilisateur est connecté
   var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+  
 
   // Met à jour le texte du lien en fonction de l'état de connexion
   updateLinkText();
@@ -164,29 +165,32 @@ document.addEventListener('DOMContentLoaded', function() {
       // Vérifie si l'utilisateur est connecté
       if (userLoggedIn) {
           // Déconnexion de l'utilisateur
-          auth.signOut().then(function() {
-              // Déconnexion réussie, redirigez l'utilisateur vers la page d'accueil ou une autre page de connexion
-              localStorage.removeItem('userLoggedIn');
-              window.location.href = 'index.html';
-          }).catch(function(error) {
-              // Gestion des erreurs de déconnexion
-              console.error('Erreur lors de la déconnexion :', error);
-          });
+          localStorage.removeItem('userLoggedIn'); // Supprimer la clé de connexion
+          updateLinkText(); // Mettre à jour le texte du lien de connexion
+          window.location.href = 'index.html'; // Redirection vers la page d'accueil
       } else {
           // Redirigez l'utilisateur vers la page de connexion
           window.location.href = 'identification.html';
       }
   });
-
-  // Fonction pour mettre à jour le texte du lien en fonction de l'état de connexion
-  function updateLinkText() {
-      if (userLoggedIn) {
-          connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion'; // Change le texte du lien si l'utilisateur est connecté
-      } else {
-          connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Mon compte'; // Change le texte du lien si l'utilisateur est déconnecté
-      }
-  }
 });
+
+// Fonction pour mettre à jour le texte du lien de connexion en fonction de l'état de connexion
+function updateLinkText() {
+  var connectLink = document.querySelector('.connect');
+  let connectedDivRight = document.querySelector('.connected');
+  var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+
+  if (userLoggedIn) {
+      // Change le texte du lien si l'utilisateur est connecté
+      connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion';
+     
+  } else {
+      connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se connecter'; // Change le texte du lien si l'utilisateur est déconnecté
+  }
+}
+
+
 
 
 
