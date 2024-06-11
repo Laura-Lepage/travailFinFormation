@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.min.css">
+    <link rel="icon" href="images/favicon-16x16.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3379e155de.js" crossorigin="anonymous"></script>
+    <title>Pamela G. Digital - Business Mentor</title>
+    
+</head>
+<body>
+    <div class="beigeBoxPages">
+        <div class="cross">
+            <div class="crossLine"></div>
+            <div class="crossLine"></div>
+        </div>
+        
+         <div class="logBox">
+             <!-- Liens pour choisir entre "S'inscrire" et "Se connecter" -->
+             <a href="#" id="signupLink">Je m'inscris</a> | <a href="#" id="loginLink">Je me connecte</a>
+             
+            <!-- Partie "S'inscrire" -->
+            <div id="signupSection" style="display: none;" class="logSection">
+                <form id="signupForm">
+                    <div>
+                        <label for="signupEmail">Adresse e-mail:</label><br>
+                        <input type="email" id="signupEmail" name="email" required>
+                    </div>
+                    <div>
+                        <label for="signupPassword">Mot de passe:</label><br>
+                        <input type="password" id="signupPassword" name="password" placeholder="min. 6 caractères" required>
+                    </div>
+                    <div>
+                        <label for="signupConfirmPassword">Confirmer le mot de passe:</label><br>
+                        <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="min. 6 caractères"required>
+                    </div>
+                
+                    <button type="submit">S'inscrire</button>
+                    <div class="inscriptionMsg logMsg"></div>
+                </form>
+            </div>
+             
+            <!-- Partie "Se connecter" -->
+            <div id="loginSection" class="logSection">
+                <form id="loginForm">
+                    <div>
+                        <label for="loginEmail">Adresse e-mail :</label><br>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    <div>
+                        <label for="loginPassword">Mot de passe :</label><br>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                
+                    <button type="submit">Se connecter</button>
+                    <div class="connexionMsg logMsg"></div>
+                </form>
+            </div>
+         </div>
+
+    
+
+
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth-compat.js"></script>
+    <script type="module" src="scripts/firebase-registration.js"></script>
+</body>
+</html>

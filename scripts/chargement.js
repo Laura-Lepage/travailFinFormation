@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redirige vers versmetierideal.html après une petite pause pour montrer 100% complet
                 setTimeout(() => {
                     window.location.href = 'versmetierideal.html';
-                }, 100); // Ajoute un délai de 500ms pour que l'utilisateur voie la barre pleine
+                }, 200); // Ajoute un délai de 500ms pour que l'utilisateur voie la barre pleine
             } else {
                 percentage += 1;
                 progressElement.style.width = percentage + '%';

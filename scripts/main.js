@@ -128,6 +128,66 @@ function startAnimationOnScroll() {
   window.addEventListener("scroll", handleScrollForStars);
 }
 
+// Importez les fonctionnalités nécessaires depuis le SDK Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+// Votre configuration Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyBiXgbkHickHvKv5JVQu02gLd8x8DhQLU4",
+  authDomain: "pamelagdigital-11c88.firebaseapp.com",
+  projectId: "pamelagdigital-11c88",
+  storageBucket: "pamelagdigital-11c88.appspot.com",
+  messagingSenderId: "883235524876",
+  appId: "1:883235524876:web:4c638ed821fdff46717929"
+};
+
+// Initialisez votre application Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+
+// Obtenez une référence à l'objet d'authentification
+const auth = getAuth(firebaseApp);
+
+document.addEventListener('DOMContentLoaded', function() {
+  var connectLink = document.querySelector('.connect');
+
+  // Vérifie si l'utilisateur est connecté
+  var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+
+  // Met à jour le texte du lien en fonction de l'état de connexion
+  updateLinkText();
+
+  // Ajoute un gestionnaire d'événements de clic au lien "Mon compte"
+  connectLink.addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      // Vérifie si l'utilisateur est connecté
+      if (userLoggedIn) {
+          // Déconnexion de l'utilisateur
+          auth.signOut().then(function() {
+              // Déconnexion réussie, redirigez l'utilisateur vers la page d'accueil ou une autre page de connexion
+              localStorage.removeItem('userLoggedIn');
+              window.location.href = 'index.html';
+          }).catch(function(error) {
+              // Gestion des erreurs de déconnexion
+              console.error('Erreur lors de la déconnexion :', error);
+          });
+      } else {
+          // Redirigez l'utilisateur vers la page de connexion
+          window.location.href = 'identification.html';
+      }
+  });
+
+  // Fonction pour mettre à jour le texte du lien en fonction de l'état de connexion
+  function updateLinkText() {
+      if (userLoggedIn) {
+          connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion'; // Change le texte du lien si l'utilisateur est connecté
+      } else {
+          connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Mon compte'; // Change le texte du lien si l'utilisateur est déconnecté
+      }
+  }
+});
+
 
 
 

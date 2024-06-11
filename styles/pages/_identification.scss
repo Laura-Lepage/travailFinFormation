@@ -1,0 +1,52 @@
+.logBox{
+    width: 70%;
+    background-color: #fff;
+    border: 2px solid $aubergine;
+    border-radius: 20px;
+    text-align: center;
+    @include absmiddle;
+    padding: 50px;
+    a{
+        color: $aubergine;
+        font-size: 20px;
+        font-weight: 500;
+        
+        &:first-child{
+            margin-right: 10px;
+        }
+        &:nth-of-type(2){
+            margin-left: 10px;
+        }
+       
+    }
+    .boldLog{
+        font-weight: bold;
+    }
+    .logSection{
+        padding: 20px;
+        div{
+            margin-top: 15px;
+            
+            input{
+                width: 300px;
+                margin-top: 3px;
+            }
+        }
+        button{
+            width: 300px;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: $aubergine;
+            color: $beige;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            cursor: pointer;
+        }
+    }
+}
+.logMsg{
+    font-size: 20px;
+}
+
