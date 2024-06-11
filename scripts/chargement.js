@@ -4,12 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressElement = document.querySelector('.progress');
     const percentageElement = document.querySelector('#percentage');
     let percentage = 0;
+    var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
 
     loadLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault(); // Empêche le comportement par défaut du lien
             // Redirige vers chargement.html
-            window.location.href = 'chargement.html';
+            if (userLoggedIn) {
+                // Déconnexion de l'utilisateur
+                
+                window.location.href = 'chargement.html'; // Redirection vers la page d'accueil
+            } else {
+                // Redirigez l'utilisateur vers la page de connexion
+                window.location.href = 'identification.html';
+            }
+        
         });
     });
 

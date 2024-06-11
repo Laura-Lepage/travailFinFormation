@@ -8,10 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 
-
-
-
-
 //Questionnaire
 let currentQuestionId = "question1"
 let questionnaireBox = document.querySelector(".questionnaireBox")
