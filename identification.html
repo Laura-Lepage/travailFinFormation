@@ -24,6 +24,10 @@
             <div id="signupSection"  class="logSection">
                 <form id="signupForm">
                     <div>
+                        <label for="nameSignup">Prénom:</label><br>
+                        <input type="text" id="nameSignup" name="firstname" required>
+                    </div> 
+                    <div>
                         <label for="signupEmail">Adresse e-mail:</label><br>
                         <input type="email" id="signupEmail" name="email" required>
                     </div>
@@ -66,6 +70,7 @@
     
     <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
     <script type="module" src="scripts/firebase-registration.js"></script>
 </body>
 </html>

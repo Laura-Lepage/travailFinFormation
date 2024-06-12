@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Importer les fonctions nécessaires de Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // Configuration Firebase
 const firebaseConfig = {
@@ -23,8 +24,19 @@ const firebaseConfig = {
 }
 
 // Initialiser Firebase
-const app = initializeApp(firebaseConfig)
-const auth = getAuth(app)
+const firebaseApp = initializeApp(firebaseConfig)
+const auth = getAuth(firebaseApp)
+const db = getFirestore(firebaseApp);
+
+// Fonction pour sauvegarder le prénom de l'utilisateur
+async function saveName(userId, firstname) {
+    try {
+        await setDoc(doc(db, "users", userId), { firstname: firstname }, { merge: true });
+        console.log("Prénom enregistré avec succès !");
+    } catch (e) {
+        console.error("Erreur lors de l'enregistrement du prénom: ", e);
+    }
+}
 
 // Variables Inscription ou Connexion
 let inscriptionPartLink = document.querySelector('#signupLink')
@@ -33,7 +45,6 @@ let inscriptionDiv = document.querySelector('#signupSection')
 let connexionDiv = document.querySelector('#loginSection')
 
 // Affichage Inscription ou Connexion
-
 inscriptionPartLink.classList.add('boldLog') //Connexion automatiquement en bold
 
 inscriptionPartLink.addEventListener('click', function(e) {
@@ -42,7 +53,6 @@ inscriptionPartLink.addEventListener('click', function(e) {
     connexionDiv.style.display = 'none'
     inscriptionPartLink.classList.add('boldLog')
     connexionPartLink.classList.remove('boldLog')
-    
 })
 
 connexionPartLink.addEventListener('click', function(e) {
@@ -56,6 +66,7 @@ connexionPartLink.addEventListener('click', function(e) {
 document.querySelector('#signupForm').addEventListener('submit', function(e) {
     e.preventDefault()
 
+    let firstname = document.querySelector('#nameSignup').value
     let email = document.querySelector('#signupEmail').value
     let password = document.querySelector('#signupPassword').value
     let confirmPassword = document.querySelector('#signupConfirmPassword').value
@@ -74,14 +85,15 @@ document.querySelector('#signupForm').addEventListener('submit', function(e) {
     }
 
     // Créer un nouvel utilisateur avec Firebase
-    createUserWithEmailAndPassword(auth, email, password)
-        
-        .then(function(userCredential) {
+    createUserWithEmailAndPassword(auth, email, password) 
+        .then(async function(userCredential) {
             // Inscription réussie, tu peux rediriger l'utilisateur vers une autre page ou effectuer d'autres actions nécessaires
             console.log("Inscription réussie !");
             inscriptionConfirmed.innerHTML = "Inscription réussie !";
-            window.location.href = 'moncompte.html';
+            const user = userCredential.user;
+            await saveName(user.uid, firstname);
             localStorage.setItem('userLoggedIn', 'true');
+            window.location.href = 'moncompte.html';
         })
         .catch(function(error) {
             // Gestion des erreurs
@@ -114,7 +126,6 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             window.location.href = 'moncompte.html';
         })
         .catch(function(error) {
-
             connexionConfirmed.textContent = "Impossible de se connecter au compte. Vérifie que ton adresse e-mail et/ou ton mot de passe soient corrects.";
         });
 });
