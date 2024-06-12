@@ -1,3 +1,13 @@
+//Click sur la croix
+document.addEventListener("DOMContentLoaded", function() {
+    const identificationCross = document.querySelector(".identificationCross");
+    identificationCross.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
+})
+
+
+
 // Importer les fonctions nécessaires de Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
@@ -70,7 +80,7 @@ document.querySelector('#signupForm').addEventListener('submit', function(e) {
             // Inscription réussie, tu peux rediriger l'utilisateur vers une autre page ou effectuer d'autres actions nécessaires
             console.log("Inscription réussie !");
             inscriptionConfirmed.innerHTML = "Inscription réussie !";
-            // window.location.href = 'versmetierideal.html';
+            window.location.href = 'moncompte.html';
             localStorage.setItem('userLoggedIn', 'true');
         })
         .catch(function(error) {
@@ -101,7 +111,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             // Connexion réussie, tu peux rediriger l'utilisateur vers une autre page ou effectuer d'autres actions nécessaires
             console.log("Connexion réussie !");
             localStorage.setItem('userLoggedIn', 'true');
-            window.location.href = 'index.html';
+            window.location.href = 'moncompte.html';
         })
         .catch(function(error) {
 

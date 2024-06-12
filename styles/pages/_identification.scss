@@ -28,12 +28,15 @@
             margin-top: 15px;
             
             input{
-                width: 300px;
+                width: 250px;
                 margin-top: 3px;
+                @media screen and (min-width: 820px){
+                    width: 300px;
+                }
             }
         }
         button{
-            width: 300px;
+            width: 250px;
             margin-top: 10px;
             padding: 10px;
             background-color: $aubergine;
@@ -43,6 +46,9 @@
             text-transform: uppercase;
             letter-spacing: 1.3px;
             cursor: pointer;
+            @media screen and (min-width: 820px){
+                width: 300px;
+            }
         }
     }
 }

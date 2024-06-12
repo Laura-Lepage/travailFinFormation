@@ -7,7 +7,7 @@ header{
     }
 }
 //Bouton Se Connecter
-.connect{
+.logFullScreen{
     display: none;
     @media screen and (min-width: 1024px){
         display: flex;
@@ -26,26 +26,7 @@ header{
         }
     }  
 }
-.connected{
-    @media screen and (min-width: 1024px){
-        width: 500px;
-        position: fixed;
-        top: 0;
-        right: 0;
-        background-color: $aubergine;
-        height: 100vh;
-        z-index: 1000;
-        transition: ease-in-out 0.5s;
-        display: none;
-        
-    }  
-    .connectedLink{
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-    
-}
+
 
 //div beige avec logo PamG Digital
 .logoBox{

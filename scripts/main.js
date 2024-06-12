@@ -1,6 +1,7 @@
-//Page Accueil
+// ---------- HomePage ----------
+// ------------------------------
 
-//Click sur BurgerMenu
+// -- Click sur BurgerMenu --
 let burgerMenu = document.querySelector('.burgerMenu')
 let menuDown = document.querySelector('.menuDown')
 
@@ -8,12 +9,12 @@ if (burgerMenu) {
   burgerMenu.addEventListener('click', function(){
     this.classList.toggle('burgerMenuActive')
     menuDown.classList.toggle('menuDownActive')
-  });
+  })
 } else {
-  console.error("L'élément burgerMenu n'a pas été trouvé dans le DOM.");
+  console.error("L'élément burgerMenu n'a pas été trouvé dans le DOM.")
 }
 
-//Menu disparait au Scroll
+// -- Menu disparait au Scroll --
 let navBox = document.querySelector('.navBox')
 let lastScrollay = 0
 
@@ -29,7 +30,7 @@ function menuScroll(){
 
 window.addEventListener('scroll', menuScroll)
 
-//Apparition des slug HomePage
+// -- Apparition des slug HomePage --
 window.addEventListener('load', function() {
   const slugs = document.querySelectorAll('.slug')
   
@@ -40,19 +41,19 @@ window.addEventListener('load', function() {
   })
 })
 
-//bulle aubergine qui bouge verticalement
+// -- Bulle aubergine qui bouge verticalement --
 window.addEventListener('scroll', function() {
   const aubergineCircle = document.querySelector('.aubergineCircle')
   const scrollY = window.scrollY
 
-// Calculer la nouvelle position verticale en fonction du scroll
+  // Calculer la nouvelle position verticale en fonction du scroll
   const newPosition = `${50 + (scrollY * 0.05)}%` // Ajuste le coefficient selon la vitesse souhaitée
 
-// Modifier la position verticale de la bulle
+  // Modifier la position verticale de la bulle
   aubergineCircle.style.top = newPosition
 })
 
-//Animation sur Approche et les étoiles dans Témoignages
+// -- Animation sur Approche et les étoiles dans Témoignages --
 const elements = {
   approche: document.querySelectorAll(".approcheHide"),
   temoignageBox: document.querySelectorAll(".temoignageHidden"),
@@ -63,25 +64,26 @@ function easyscroll(elementsList, className) {
     if (window.scrollY + window.innerHeight > element.offsetTop + element.offsetHeight / 2) {
       setTimeout(() => {
         element.classList.add(className);
-      }, index * 300);
+      }, index * 300)
     }
-  });
+  })
 }
 
 function handleScroll() {
-  easyscroll(elements.approche, "approcheShow");
-  easyscroll(elements.temoignageBox, "temoignageShow");
+  easyscroll(elements.approche, "approcheShow")
+  easyscroll(elements.temoignageBox, "temoignageShow")
 
-  const firstTemoignageBox = elements.temoignageBox[0];
-  const temoignageShowFinished = firstTemoignageBox.classList.contains('temoignageShow');
+  const firstTemoignageBox = elements.temoignageBox[0]
+  const temoignageShowFinished = firstTemoignageBox.classList.contains('temoignageShow')
+
   if (temoignageShowFinished) {
-    startAnimationOnScroll();
+    startAnimationOnScroll()
   }
 }
 
 handleScroll();
 
-window.addEventListener("scroll", handleScroll);
+window.addEventListener("scroll", handleScroll)
 
 function startAnimationOnScroll() {
   const starsContainers = document.querySelectorAll('.stars');
@@ -94,24 +96,24 @@ function startAnimationOnScroll() {
       rect.left >= 0 &&
       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    )
   }
 
   function animateStarsIfVisible() {
     if (!animationTriggered) {
       starsContainers.forEach((container, containerIndex) => {
-        const stars = container.querySelectorAll('.fa-star');
-        const starsToAnimate = (containerIndex === 1) ? 4 : stars.length;
+        const stars = container.querySelectorAll('.fa-star')
+        const starsToAnimate = (containerIndex === 1) ? 4 : stars.length
 
-        const containerTop = container.getBoundingClientRect().top;
-        const isVisible = containerTop < window.innerHeight;
+        const containerTop = container.getBoundingClientRect().top
+        const isVisible = containerTop < window.innerHeight
 
         if (isVisible) {
           stars.forEach((star, index) => {
             if (index < starsToAnimate) {
               setTimeout(() => {
-                star.classList.add('aubergine');
-              }, index * 600);
+                star.classList.add('aubergine')
+              }, index * 600)
             }
           });
 
@@ -148,12 +150,12 @@ const firebaseApp = initializeApp(firebaseConfig);
 // Obtenez une référence à l'objet d'authentification
 const auth = getAuth(firebaseApp);
 
+
 document.addEventListener('DOMContentLoaded', function() {
-  var connectLink = document.querySelector('.connect');
+  let connectLink = document.querySelector('.logFullScreen');
 
   // Vérifie si l'utilisateur est connecté
   var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
-  
 
   // Met à jour le texte du lien en fonction de l'état de connexion
   updateLinkText();
@@ -177,17 +179,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Fonction pour mettre à jour le texte du lien de connexion en fonction de l'état de connexion
 function updateLinkText() {
-  var connectLink = document.querySelector('.connect');
+  let connectLink = document.querySelector('.logFullScreen');
   let connectedDivRight = document.querySelector('.connected');
-  var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+  let userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
 
   if (userLoggedIn) {
       // Change le texte du lien si l'utilisateur est connecté
       connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion';
+      
+      
      
   } else {
       connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se connecter'; // Change le texte du lien si l'utilisateur est déconnecté
-  }
+     
+    }
 }
 
 

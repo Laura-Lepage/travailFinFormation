@@ -1,18 +1,22 @@
+// ---------- Page Chargement ----------
+// -------------------------------------
+
+// Au chargement du site...
 document.addEventListener('DOMContentLoaded', function() {
     const loadLinks = document.querySelectorAll('.loadLink');
     const loadingElement = document.querySelector('#loading');
     const progressElement = document.querySelector('.progress');
     const percentageElement = document.querySelector('#percentage');
     let percentage = 0;
-    var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+    // On vérifie si l'utilisateur est connecté ou non
+    let userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
 
+    // On clique sur un bouton (au choix) pour aller au questionnaire sur la HomePage
     loadLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault(); // Empêche le comportement par défaut du lien
             // Redirige vers chargement.html
             if (userLoggedIn) {
-                // Déconnexion de l'utilisateur
-                
                 window.location.href = 'chargement.html'; // Redirection vers la page d'accueil
             } else {
                 // Redirigez l'utilisateur vers la page de connexion
