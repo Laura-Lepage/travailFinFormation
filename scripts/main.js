@@ -152,7 +152,7 @@ const auth = getAuth(firebaseApp);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  let connectLink = document.querySelector('.logFullScreen');
+  let connectLink = document.querySelector('.logConnexion');
 
   // Vérifie si l'utilisateur est connecté
   var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
@@ -179,19 +179,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Fonction pour mettre à jour le texte du lien de connexion en fonction de l'état de connexion
 function updateLinkText() {
-  let connectLink = document.querySelector('.logFullScreen');
-  let connectedDivRight = document.querySelector('.connected');
+  let connectLink = document.querySelector('.logConnexion');
   let userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+  let accountLink = document.querySelector(".logMonCompte")
 
   if (userLoggedIn) {
       // Change le texte du lien si l'utilisateur est connecté
       connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion';
+      accountLink.style.display = "block"
       
       
      
   } else {
       connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se connecter'; // Change le texte du lien si l'utilisateur est déconnecté
-     
+      accountLink.style.display = "none"
     }
 }
 

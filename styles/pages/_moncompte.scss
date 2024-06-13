@@ -1,0 +1,23 @@
+.helloPart{
+    @include absmiddle;
+    background-color: $beige;
+    width: 70%;
+    padding: 50px;
+    text-align: center;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    h3{
+        font-size: 26px;
+        margin: 0 0 10px;
+    }
+    .resultCompte{
+        width: 60%;
+        margin: 50px auto 0;
+
+       
+       
+    
+    }
+    
+    
+}

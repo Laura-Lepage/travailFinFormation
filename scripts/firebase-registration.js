@@ -93,7 +93,7 @@ document.querySelector('#signupForm').addEventListener('submit', function(e) {
             const user = userCredential.user;
             await saveName(user.uid, firstname);
             localStorage.setItem('userLoggedIn', 'true');
-            window.location.href = 'moncompte.html';
+            window.location.href = 'index.html';
         })
         .catch(function(error) {
             // Gestion des erreurs

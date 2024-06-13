@@ -13,7 +13,6 @@ header{
         display: flex;
         position: fixed;
         top: 0;
-        right: 4%;
         z-index: 200;
         padding: 8px 60px 10px;
         border-bottom-left-radius: 15px;
@@ -26,7 +25,13 @@ header{
         }
     }  
 }
+.logConnexion{
+    right: 4%;
+}
+.logMonCompte{
+    right: 17%;
 
+}
 
 //div beige avec logo PamG Digital
 .logoBox{

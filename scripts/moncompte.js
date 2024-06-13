@@ -1,6 +1,6 @@
 //Click sur la croix
 document.addEventListener("DOMContentLoaded", function() {
-    const moncompteCross = document.querySelector(".moncompteCross");
+    const moncompteCross = document.querySelector(".moncompteCross")
     moncompteCross.addEventListener("click", function() {
         window.location.href = "index.html";
     });
@@ -32,26 +32,67 @@ const db = getFirestore(firebaseApp);
 // Obtenez une référence à l'objet d'authentification
 const auth = getAuth(firebaseApp);
 
+// Fonction pour récupérer le prénom de l'utilisateur
+async function getFirstName(userId) {
+    try {
+        const userDoc = await getDoc(doc(db, "users", userId));
+        if (userDoc.exists()) {
+            return userDoc.data().firstname;
+        } else {
+            console.log("Aucun document trouvé pour l'utilisateur.");
+            return null;
+        }
+    } catch (e) {
+        console.error("Erreur lors de la récupération du prénom: ", e);
+        return null;
+    }
+}
+
 
 // Fonction pour récupérer et afficher les résultats de l'utilisateur
 async function afficherResultatsUtilisateur(userId) {
     const docRef = doc(db, "users", userId, "questionnaires", "latest");
     const docSnap = await getDoc(docRef);
+    const helloPart = document.querySelector(".helloPart");
 
     if (docSnap.exists()) {
         const data = docSnap.data();
-        const resultmoncompteDiv = document.querySelector(".resultmoncompte");
+        
 
-        // Mettre à jour le contenu de la div avec les résultats récupérés
-        resultmoncompteDiv.innerHTML = `
-            <h2>Résultats de votre questionnaire :</h2>
-            <p>Résultat : ${data.result}</p>
-            <p>Explication : ${data.explanation}</p>
-            <p>Possibilités : ${data.possibilities.join(", ")}</p>
-            <p>Conclusion : ${data.conclusion}</p>
+        // Récupérer le prénom de l'utilisateur
+        const firstName = await getFirstName(userId);
+
+        // Mettre à jour le contenu de la div avec le prénom et les résultats récupérés
+        helloPart.innerHTML = `
+            <h3>Salut ${firstName ? firstName : ''} !</h3>
+            <div>Bienvenu sur ton compte </div>
+            <div class="resultCompte">
+                <p>Voici les résultats :</p>
+                <p class="resultProfil">${data.result}</p>
+                <p>${data.explanation}</p>
+                <p>${data.possibilities.join(", ")}</p>
+                <p>${data.conclusion}</p>
+            </div>
         `;
+
+        // Stocker un indicateur dans localStorage pour indiquer que l'utilisateur a des résultats
+        localStorage.setItem('hasResults', 'true');
     } else {
-        console.log("Aucun résultat de questionnaire trouvé pour cet utilisateur.");
+        // Récupérer le prénom de l'utilisateur pour afficher le message de bienvenue
+        const firstName = await getFirstName(userId);
+
+        // Afficher un message indiquant qu'il n'y a pas encore de résultats
+        helloPart.innerHTML = `
+            <h3>Salut ${firstName ? firstName : ''} !</h3>
+            <div>Bienvenu sur ton compte</div>
+            <div class="resultCompte">
+                <p>Vous n'avez pas encore de résultats de questionnaire disponibles.</p>
+            </div>
+        `;
+
+        // Supprimer l'indicateur de localStorage s'il existe
+        localStorage.removeItem('hasResults');
+        
     }
 }
 

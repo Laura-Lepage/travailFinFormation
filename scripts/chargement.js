@@ -8,21 +8,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressElement = document.querySelector('.progress');
     const percentageElement = document.querySelector('#percentage');
     let percentage = 0;
+
     // On vérifie si l'utilisateur est connecté ou non
     let userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
 
-    // On clique sur un bouton (au choix) pour aller au questionnaire sur la HomePage
+    // Vérifier si l'utilisateur a des résultats enregistrés
+    const hasResults = localStorage.getItem('hasResults') === 'true';
+
+    // Fonction pour gérer la redirection vers chargement.html
+    function redirectToChargement() {
+        window.location.href = 'chargement.html';
+    }
+
+    // Gestionnaire d'événements pour chaque lien de chargement
     loadLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
             e.preventDefault(); // Empêche le comportement par défaut du lien
-            // Redirige vers chargement.html
+
+            // Si l'utilisateur est connecté
             if (userLoggedIn) {
-                window.location.href = 'chargement.html'; // Redirection vers la page d'accueil
+                // Si des résultats sont déjà enregistrés
+                if (hasResults) {
+                    // Demander confirmation avant de refaire le test
+                    if (confirm("Vous avez déjà des résultats enregistrés. Êtes-vous sûr de vouloir refaire le test ?")) {
+                        redirectToChargement();
+                    }
+                } else {
+                    redirectToChargement();
+                }
             } else {
-                // Redirigez l'utilisateur vers la page de connexion
+                // Redirection vers la page de connexion
                 window.location.href = 'identification.html';
             }
-        
         });
     });
 
@@ -53,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Redirige vers versmetierideal.html après une petite pause pour montrer 100% complet
                 setTimeout(() => {
                     window.location.href = 'versmetierideal.html';
-                }, 200); // Ajoute un délai de 500ms pour que l'utilisateur voie la barre pleine
+                }, 200); // Ajoute un délai de 200ms pour que l'utilisateur voie la barre pleine
             } else {
                 percentage += 1;
                 progressElement.style.width = percentage + '%';
@@ -62,4 +79,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }, intervalTime);
     }
 });
-
