@@ -7,13 +7,16 @@ header{
     }
 }
 //Bouton Se Connecter
-.logFullScreen{
+.logInBox{
     display: none;
     @media screen and (min-width: 1024px){
         display: flex;
         position: fixed;
         top: 0;
+        right: 5%;
         z-index: 200;
+    }
+    a{
         padding: 8px 60px 10px;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
@@ -23,13 +26,11 @@ header{
         &:hover{
             background-color: $aubergineHover;
         }
-    }  
-}
-.logConnexion{
-    right: 4%;
-}
-.logMonCompte{
-    right: 17%;
+        &:not(:last-child){
+            margin-right: 10px;
+        }
+
+    }
 
 }
 

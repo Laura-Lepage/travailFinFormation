@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Si des résultats sont déjà enregistrés
                 if (hasResults) {
                     // Demander confirmation avant de refaire le test
-                    if (confirm("Vous avez déjà des résultats enregistrés. Êtes-vous sûr de vouloir refaire le test ?")) {
+                    if (confirm("Vous avez déjà des résultats enregistrés. Êtes-vous sûr de vouloir refaire le test ? Cela remplacera les résultats existants.")) {
                         redirectToChargement();
                     }
                 } else {

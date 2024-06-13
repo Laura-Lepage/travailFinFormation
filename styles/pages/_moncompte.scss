@@ -1,22 +1,46 @@
 .helloPart{
     @include absmiddle;
     background-color: $beige;
-    width: 70%;
+    width: 85%;
     padding: 50px;
     text-align: center;
     border-radius: 20px;
-    border: 2px solid #fff;
-    h3{
+    border: 5px solid #fff;
+    @media screen and (min-width: 1024px){
+        width: 70%;
+    }
+    .greet{
         font-size: 26px;
         margin: 0 0 10px;
+        span{
+            font-weight: bold;
+        }
     }
     .resultCompte{
-        width: 60%;
+        width: 100%;
         margin: 50px auto 0;
+        @media screen and (min-width: 1024px){
+            width: 60%;
+        }
 
-       
-       
-    
+        p{
+            margin: 2px;
+            line-height: 1.7;
+            &:last-child{
+                margin-bottom: 60px;
+            }
+        }
+    }
+    .btnCompte{
+        width: 250px;
+        background-color: $aubergine;
+        color: #fff;
+        padding: 15px 30px;
+
+        border-radius: 10px;
+        @media screen and (min-width: 500px){
+            padding: 15px 80px;
+        }
     }
     
     

@@ -152,50 +152,58 @@ const auth = getAuth(firebaseApp);
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  let connectLink = document.querySelector('.logConnexion');
+  let connectLinks = document.querySelectorAll('.logConnexion');
+  let accountLinks = document.querySelectorAll('.logMonCompte');
 
   // Vérifie si l'utilisateur est connecté
   var userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
 
-  // Met à jour le texte du lien en fonction de l'état de connexion
+  // Met à jour le texte des liens en fonction de l'état de connexion
   updateLinkText();
 
-  // Ajoute un gestionnaire d'événements de clic au lien "Mon compte"
-  connectLink.addEventListener('click', function(event) {
-      event.preventDefault();
-      
-      // Vérifie si l'utilisateur est connecté
-      if (userLoggedIn) {
-          // Déconnexion de l'utilisateur
-          localStorage.removeItem('userLoggedIn'); // Supprimer la clé de connexion
-          updateLinkText(); // Mettre à jour le texte du lien de connexion
-          window.location.href = 'index.html'; // Redirection vers la page d'accueil
-      } else {
-          // Redirigez l'utilisateur vers la page de connexion
-          window.location.href = 'identification.html';
-      }
+  // Ajoute un gestionnaire d'événements de clic à chaque lien "Connexion"
+  connectLinks.forEach(function(connectLink) {
+      connectLink.addEventListener('click', function(event) {
+          event.preventDefault();
+
+          // Vérifie si l'utilisateur est connecté
+          if (userLoggedIn) {
+              // Déconnexion de l'utilisateur
+              localStorage.removeItem('userLoggedIn'); // Supprimer la clé de connexion
+              userLoggedIn = false; // Mettre à jour l'état de connexion
+              updateLinkText(); // Mettre à jour le texte des liens de connexion
+              window.location.href = 'index.html'; // Redirection vers la page d'accueil
+          } else {
+              // Redirigez l'utilisateur vers la page de connexion
+              window.location.href = 'identification.html';
+          }
+      });
   });
+
+  // Fonction pour mettre à jour le texte des liens de connexion et l'affichage des liens de compte en fonction de l'état de connexion
+  function updateLinkText() {
+      let connectLinks = document.querySelectorAll('.logConnexion');
+      let userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
+      let accountLinks = document.querySelectorAll(".logMonCompte");
+
+      connectLinks.forEach(function(connectLink) {
+          if (userLoggedIn) {
+              // Change le texte des liens si l'utilisateur est connecté
+              connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion';
+          } else {
+              connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se connecter'; // Change le texte des liens si l'utilisateur est déconnecté
+          }
+      });
+
+      accountLinks.forEach(function(accountLink) {
+          if (userLoggedIn) {
+              accountLink.style.display = "block";
+          } else {
+              accountLink.style.display = "none";
+          }
+      });
+  }
 });
-
-// Fonction pour mettre à jour le texte du lien de connexion en fonction de l'état de connexion
-function updateLinkText() {
-  let connectLink = document.querySelector('.logConnexion');
-  let userLoggedIn = localStorage.getItem('userLoggedIn') === 'true';
-  let accountLink = document.querySelector(".logMonCompte")
-
-  if (userLoggedIn) {
-      // Change le texte du lien si l'utilisateur est connecté
-      connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion';
-      accountLink.style.display = "block"
-      
-      
-     
-  } else {
-      connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se connecter'; // Change le texte du lien si l'utilisateur est déconnecté
-      accountLink.style.display = "none"
-    }
-}
-
 
 
 

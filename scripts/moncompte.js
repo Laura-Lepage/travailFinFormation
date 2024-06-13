@@ -58,21 +58,20 @@ async function afficherResultatsUtilisateur(userId) {
     if (docSnap.exists()) {
         const data = docSnap.data();
         
-
         // Récupérer le prénom de l'utilisateur
         const firstName = await getFirstName(userId);
 
         // Mettre à jour le contenu de la div avec le prénom et les résultats récupérés
         helloPart.innerHTML = `
-            <h3>Salut ${firstName ? firstName : ''} !</h3>
-            <div>Bienvenu sur ton compte </div>
+            <div class="greet">Salut <span>${firstName ? firstName : ''}</span> !</div>
             <div class="resultCompte">
-                <p>Voici les résultats :</p>
+                <p>Tu devrais envisager une carrière en tant que</p>
                 <p class="resultProfil">${data.result}</p>
                 <p>${data.explanation}</p>
                 <p>${data.possibilities.join(", ")}</p>
                 <p>${data.conclusion}</p>
             </div>
+            <a href="prendreunrendezvous.html" class="btnCompte">Je réserve mon coaching</a>
         `;
 
         // Stocker un indicateur dans localStorage pour indiquer que l'utilisateur a des résultats
@@ -83,11 +82,15 @@ async function afficherResultatsUtilisateur(userId) {
 
         // Afficher un message indiquant qu'il n'y a pas encore de résultats
         helloPart.innerHTML = `
-            <h3>Salut ${firstName ? firstName : ''} !</h3>
-            <div>Bienvenu sur ton compte</div>
+            <div class="greet">Salut <span>${firstName ? firstName : ''}</span> !</div>
+            <div>Je te souhaite la bienvenue sur ton compte</div>
             <div class="resultCompte">
-                <p>Vous n'avez pas encore de résultats de questionnaire disponibles.</p>
+                <p>Il semble que tu n'as pas encore répondu au questionnaire. Aucun résultat n'a été trouvé sur ton compte.</p>
+                <p>Si tu souhaites découvrir les opportunités qui t'attendent dans le monde du numérique, je t'invite à cliquer sur le bouton ci-dessous.</p>
             </div>
+            <a href="chargement.html" class="loadLink btnCompte">Vers ton métier idéal</a>
+
+
         `;
 
         // Supprimer l'indicateur de localStorage s'il existe
