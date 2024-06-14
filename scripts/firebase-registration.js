@@ -93,7 +93,7 @@ document.querySelector('#signupForm').addEventListener('submit', function(e) {
             const user = userCredential.user;
             await saveName(user.uid, firstname);
             localStorage.setItem('userLoggedIn', 'true');
-            window.location.href = 'index.html';
+            window.location.href = 'moncompte.html';
         })
         .catch(function(error) {
             // Gestion des erreurs
@@ -128,4 +128,26 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         .catch(function(error) {
             connexionConfirmed.textContent = "Impossible de se connecter au compte. Vérifie que ton adresse e-mail et/ou ton mot de passe soient corrects.";
         });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const togglePasswordIcons = document.querySelectorAll('.togglePassword');
+    const passwordInputs = document.querySelectorAll('.signupPasswordeye');
+
+    togglePasswordIcons.forEach(function(icon, index) {
+        icon.addEventListener('click', function() {
+            // Toggle du type d'input entre 'password' et 'text'
+            const type = passwordInputs[index].getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInputs[index].setAttribute('type', type);
+
+            // Toggle de l'icône entre œil ouvert et œil barré
+            if (type === 'text') {
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+    });
 });

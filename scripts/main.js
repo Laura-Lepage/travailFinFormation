@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
       connectLinks.forEach(function(connectLink) {
           if (userLoggedIn) {
               // Change le texte des liens si l'utilisateur est connecté
-              connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Déconnexion';
+              connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se déconnecter';
           } else {
               connectLink.innerHTML = '<i class="fa-regular fa-user"></i> Se connecter'; // Change le texte des liens si l'utilisateur est déconnecté
           }

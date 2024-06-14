@@ -93,11 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Vérifier si l'utilisateur a des résultats enregistrés
     const hasResults = localStorage.getItem('hasResults') === 'true';
 
-    // Fonction pour gérer la redirection vers chargement.html
-    function redirectToChargement() {
-        window.location.href = 'chargement.html';
-    }
-
     // Vérifier la connexion de l'utilisateur directement sur chargement.html
     function checkUserLoggedIn() {
         if (!userLoggedIn) {
@@ -125,13 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (userLoggedIn) {
                 // Si des résultats sont déjà enregistrés
                 if (hasResults) {
-                    // Demander confirmation avant de refaire le test
-                    if (confirm("Vous avez déjà des résultats enregistrés. Êtes-vous sûr de vouloir refaire le test ? Cela remplacera les résultats existants.")) {
-                        redirectToChargement();
-                    }
-                } else {
-                    redirectToChargement();
-                }
+                    window.location.href = 'chargement.html';
+                } 
             } else {
                 // Redirection vers la page de connexion
                 window.location.href = 'identification.html';

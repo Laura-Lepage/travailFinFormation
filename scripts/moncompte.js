@@ -82,6 +82,7 @@ async function afficherResultatsUtilisateur(userId) {
 
         // Afficher un message indiquant qu'il n'y a pas encore de résultats
         helloPart.innerHTML = `
+            
             <div class="greet">Salut <span>${firstName ? firstName : ''}</span> !</div>
             <div>Je te souhaite la bienvenue sur ton compte</div>
             <div class="resultCompte">
