@@ -74,7 +74,7 @@
             .btnMenuDown{
                 margin: 20px 0 30px;
                 background-color: $aubergine;
-                width: 350px;
+                width: 450px;
                 padding: 10px;
                 border-radius: 10px;
                 box-shadow: 0 3px rgb(39, 33, 33, 0.7);
@@ -107,7 +107,6 @@
         align-items: center;
         font-family: "Teachers", sans-serif;
         font-size: 20px;
-        font-weight: 500;
         @media screen and (max-width: 1024px){
             display: none;
         }
@@ -125,12 +124,12 @@
         }
         .metiercallaction{
             color: $aubergine;
-            padding: 10px 50px;
-            background-color: $beige;
+            padding: 10px 70px;
+            background-color: rgba(250, 242, 221, 0.7);
             border-radius: 10px;
-            box-shadow: 2px 2px rgba(102, 102, 102, 0.5);
+            box-shadow: 0 1px rgba(102, 102, 102, 0.5);
             &:hover{
-                background-color: $beigeHover;
+                background-color: $beige;
             }
         }
     }    

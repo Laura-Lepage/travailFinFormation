@@ -2,27 +2,33 @@
 [
     {
         "id": "question1",
-        "text": "Aimez-vous travailler avec des ordinateurs et des technologies modernes ?",
+        "text": "Aimes-tu travailler avec des ordinateurs et des technologies modernes?",
         "yes": "question2",
         "no": "endQuizNo"
     },
     {
         "id": "question2",
-        "text": "Êtes-vous passionné par la création de sites web et le développement de logiciels ?",
+        "text": "As-tu de l'intérêt pour la création de sites web et le développement de logiciels?",
         "yes": "question3",
-        "no": "question5"
+        "no": "question6"
     },
     {
         "id": "question3",
-        "text": "Aimez-vous écrire du code et résoudre des problèmes techniques ?",
+        "text": "Es-tu attiré(e) par l'aspect visuel et interactif des sites web?",
         "yes": "question4",
-        "no": "question5"
+        "no": "question6"
     },
     {
         "id": "question4",
-        "text": "Aimez-vous travailler avec des langages de programmation comme HTML, CSS, et JavaScript ?",
+        "text": "Te vois-tu écrire du code et résoudre des problèmes techniques?",
+        "yes": "question5",
+        "no": "question6"
+    },
+    {
+        "id": "question5",
+        "text": "Te sens-tu à l'aise à l'idée d'apprendre des langages de programmation comme HTML, CSS, et JavaScript?",
         "yes": "result",
-        "no": "question5",
+        "no": "question6",
         "result": "Web Developer",
         "explanation": "Ce profil offre de nombreuses possibilités :",
         "possibilities": [
@@ -35,16 +41,28 @@
         "conclusion": "Avec ce profil, vous pouvez entreprendre des projets variés, améliorer votre expertise technique et contribuer de manière significative à des initiatives web innovantes."
     },
     {
-        "id": "question5",
-        "text": "Aimez-vous analyser des données et trouver des tendances ?",
-        "yes": "question6",
-        "no": "question9"
+        "id": "question6",
+        "text": "Aimes-tu analyser des données et trouver des tendances?",
+        "yes": "question7",
+        "no": "question10"
     },
     {
-        "id": "question6",
-        "text": "Aimez-vous utiliser des outils comme SQL, Python ou Excel pour travailler avec des données ?",
+        "id": "question7",
+        "text": "Aimes-tu créer des visuels clairs et percutants pour aider à la prise de décision?",
+        "yes": "question8",
+        "no": "question10"
+    },
+    {
+        "id": "question8",
+        "text": "Aimes-tu appliquer des techniques statistiques avancées pour prédire des tendances et traduire les résultats en recommandations claires?",
+        "yes": "question9",
+        "no": "question10"
+    },
+    {
+        "id": "question9",
+        "text": "Te sens-tu à l'aise à l'idée d'utiliser des outils comme SQL, Python ou Excel pour travailler avec des données?",
         "yes": "result",
-        "no": "question9", 
+        "no": "question10", 
         "result": "Data Analyst",
         "explanation": "Ce profil offre de nombreuses possibilités :",
         "possibilities": [
@@ -57,22 +75,28 @@
         "conclusion": "Avec ce profil, vous pouvez transformer des données brutes en informations exploitables, améliorer la prise de décision stratégique et contribuer à la croissance de l'entreprise grâce à des insights basés sur les données."
     },
     {
-        "id": "question9",
-        "text": "Êtes-vous passionné par le marketing digital et les stratégies en ligne ?",
-        "yes": "question10",
-        "no": "question13"
-    },
-    {
         "id": "question10",
-        "text": "Aimez-vous planifier et exécuter des campagnes de marketing digital pour attirer et engager des clients ?",
+        "text": "Es-tu passionné(e) par le marketing digital et les stratégies en ligne?",
         "yes": "question11",
-        "no": "question13"
+        "no": "question14"
     },
     {
         "id": "question11",
-        "text": "Aimez-vous travailler avec des outils comme Google Analytics, SEO, et les réseaux sociaux ?",
+        "text": "Te vois-tu planifier et exécuter des campagnes de marketing digital pour attirer et engager un public cible?",
+        "yes": "question12",
+        "no": "question14"
+    },
+    {
+        "id": "question12",
+        "text": "Es-tu intéressé(e) par produire du contenu attractif et pertinent pour attirer une audience et promouvoir des produits ou services?",
+        "yes": "question13",
+        "no": "question14"
+    },
+    {
+        "id": "question13",
+        "text": "Te sens-tu à l'aise de travailler avec des outils comme les réseaux sociaux mais aussi Google Analytics et SEO afin d'améliorer la visibilité en ligne?",
         "yes": "result",
-        "no": "question13",
+        "no": "question14",
         "result": "Digital Marketer",
         "explanation": "Ce profil offre de nombreuses possibilités :",
         "possibilities": [
@@ -85,16 +109,29 @@
         "conclusion": "Avec ce profil, vous pouvez maximiser l'impact des campagnes digitales, augmenter la notoriété de la marque et générer des leads qualifiés pour soutenir la croissance de l'entreprise."
     },
     {
-        "id": "question13",
-        "text": "Aimez-vous concevoir des interfaces utilisateur et créer des visuels attractifs ?",
-        "yes": "question14",
-        "no": "question16"
+        "id": "question14",
+        "text": "Es-tu intéressé(e) par la création de designs attrayants et fonctionnels pour des sites web?",
+        "yes": "question15",
+        "no": "question18"
     },
     {
-        "id": "question14",
-        "text": "Aimez-vous utiliser des outils de design comme Photoshop et Illustrator ?",
+        "id": "question15",
+        "text": "Trouves-tu important de concevoir des interfaces intuitives et une expérience fluide pour garantir une bonne expérience des utilisateurs?",
+        "yes": "question16",
+        "no": "question18"
+    },
+    {
+        "id": "question16",
+        "text": "Te sens-tu à l'aise de présenter et de justifier tes choix de design auprès des parties prenantes et des clients?",
+        "yes": "question17",
+        "no": "question18"
+    },
+
+    {
+        "id": "question17",
+        "text": "Te sens-tu à l'aise à l'idée d'utiliser des outils comme Adobe Photoshop, Illustrator ou Figma pour concevoir des maquettes et des prototypes?",
         "yes": "result",
-        "no": "question16",
+        "no": "question18",
         "result": "Web Designer",
         "explanation": "Ce profil offre de nombreuses possibilités :",
         "possibilities": [
@@ -107,16 +144,28 @@
         "conclusion": "Avec ce profil, vous pouvez donner vie à des concepts créatifs, améliorer l'ergonomie des sites web et offrir une expérience utilisateur exceptionnelle."
     },
     {
-        "id": "question16",
-        "text": "Êtes-vous intéressé par la sécurité informatique et la protection des données ?",
-        "yes": "question17",
-        "no": "question19"
+        "id": "question18",
+        "text": "Es-tu intéressé(e) par la sécurité informatique et la protection des données?",
+        "yes": "question19",
+        "no": "question22"
     },
     {
-        "id": "question17",
-        "text": "Aimez-vous analyser des systèmes pour trouver et corriger des vulnérabilités de sécurité ?",
+        "id": "question19",
+        "text": "Es-tu intéressé(e) d'analyser des systèmes pour trouver et corriger des vulnérabilités de sécurité?",
+        "yes": "question20",
+        "no": "question22"
+    },
+    {
+        "id": "question20",
+        "text": "Te sens-tu à l'aise de rédiger des rapports détaillés sur les incidents de sécurité et les actions correctives prises?",
+        "yes": "question21",
+        "no": "question22"
+    },
+    {
+        "id": "question21",
+        "text": "Es-tu motivé(e) de former des employés sur les meilleures pratiques en matière de sécurité et de promouvoir une culture de la sécurité au sein d'une organisation?",
         "yes": "result",
-        "no": "question19",
+        "no": "question22",
         "result": "Cybersecurity Specialist",
         "explanation": "Ce profil offre de nombreuses possibilités :",
         "possibilities": [
@@ -129,20 +178,26 @@
         "conclusion": "Avec ce profil, vous pouvez contribuer à renforcer la sécurité des données et des infrastructures informatiques, réduire les risques de violations de données et protéger la réputation et la confidentialité de l'entreprise."
     },
     {
-        "id": "question19",
-        "text": "Aimez-vous organiser et coordonner des projets, et travailler avec des équipes pour atteindre des objectifs ?",
-        "yes": "question20",
+        "id": "question22",
+        "text": "Es-tu intéressé(e) d'organiser, de coordonner des projets et d'élaborer des plans détaillés pour atteindre des objectifs?",
+        "yes": "question23",
         "no": "end"
     },
     {
-        "id": "question20",
-        "text": "Aimez-vous planifier chaque étape d'un projet et vous assurer qu'il est terminé dans les délais et selon le budget ?",
-        "yes": "question21",
+        "id": "question23",
+        "text": "Tu sens-tu capable de diriger et de motiver les membres d'une équipe pour assurer l'accomplissement des tâches dans les délais impartis?",
+        "yes": "question24",
         "no": "end"
     },
     {
-        "id": "question21",
-        "text": "Aimez-vous utiliser des méthodologies de gestion de projet comme Agile ou Scrum ?",
+        "id": "question24",
+        "text": "Es-tu intéressé(e) d'apprendre des méthodes de gestion de projet telles qu'Agile ou Scrum afin d'atteindre efficacement des objectifs fixés tout en respectant les contraintes budgétaires?",
+        "yes": "question25",
+        "no": "end"
+    },
+    {
+        "id": "question25",
+        "text": "Te sens-tu à l'aise de faciliter la communication entre les membres d'une équipe, les parties prenantes et les clients afin d'assurer la compréhension et la satisfaction?",
         "yes": "result",
         "no": "end",
         "result": "Project Manager",
