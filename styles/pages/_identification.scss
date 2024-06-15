@@ -16,8 +16,22 @@
         z-index: -1;
         filter: opacity(0.2);
     }
+    a{
+        color: $aubergine;
+        font-size: 20px;
+        font-weight: 500;
+        &:nth-of-type(1){
+            margin-right: 10px;
+        }
+        &:nth-of-type(2){
+            margin-left: 10px;
+        }
+    }
+    .boldLog{
+        font-weight: bold;
+    }
     .password-container {
-        width: 200px;
+        width: 260px;
         position: relative;
         margin: 0 auto;
         @media screen and (min-width: 820px){
@@ -32,40 +46,26 @@
         transform: translateY(-50%);
         color: grey;
     }
-   
-    a{
-        color: $aubergine;
-        font-size: 20px;
-        font-weight: 500;
-        &:nth-of-type(1){
-            margin-right: 20px;
-        }
-        &:nth-of-type(2){
-            margin-left: 10px;
-        }
-    }
-    .boldLog{
-        font-weight: bold;
-    }
     .logSection{
         padding: 20px;
         
         div{
             margin-top: 15px;
-            
             input{
-                width: 200px;
+                width: 260px;
                 margin-top: 3px;
                 @media screen and (min-width: 820px){
                     width: 300px;
                 }
             }
         }
-        .checkbox{
-            margin: 15px 0 10px;
+        #agreeCheckbox{
+            width: 20px;
+           
+            
         }
         button{
-            width: 200px;
+            width: 260px;
             margin-top: 10px;
             padding: 10px;
             background-color: $aubergine;

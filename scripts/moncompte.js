@@ -68,7 +68,7 @@ async function afficherResultatsUtilisateur(userId) {
                 <p>Tu devrais envisager une carrière en tant que</p>
                 <p class="resultProfil">${data.result}</p>
                 <p>${data.explanation}</p>
-                <p>${data.possibilities.join(", ")}</p>
+                <p>${data.possibilities.map(p => `${p}<br>`).join('')}</p>
                 <p>${data.conclusion}</p>
             </div>
             <a href="prendreunrendezvous.html" class="btnCompte">Je réserve mon coaching</a>

@@ -21,12 +21,13 @@
             <a href="#" id="signupLink">Je m'inscris</a> | <a href="#" id="loginLink">Je me connecte</a>
              
             <!-- Partie "S'inscrire" -->
+            
             <div id="signupSection"  class="logSection">
                 <form id="signupForm">
                     <div>
                         <label for="nameSignup">Nom d'utilisateur:</label><br>
                         <input type="text" id="nameSignup" name="firstname" required>
-                    </div> 
+                    </div>
                     <div>
                         <label for="signupEmail">Adresse e-mail:</label><br>
                         <input type="email" id="signupEmail" name="email" required>
@@ -41,15 +42,18 @@
                         <input type="password" id="signupConfirmPassword" class="signupPasswordeye" name="confirmPassword" placeholder="Minimum 6 caractères"required>
                         <i class="far fa-eye eye-icon togglePassword"></i>
                     </div>
-
-                    <input type="checkbox" name="" class="checkbox" required> jdzsijdzijdizjdfddfdfdfdfdff <br>
-                    enfefuuehfubeuj <br>
-                    <br>
-                
+                    <div class="agree">
+                        <label for="agreeCheckbox">
+                            <input type="checkbox" id="agreeCheckbox" name="agree" required>
+                            J'accepte les termes et conditions
+                        </label>
+                    </div>
+            
                     <button type="submit">S'inscrire</button>
                     <div class="inscriptionMsg logMsg"></div>
                 </form>
             </div>
+            
              
             <!-- Partie "Se connecter" -->
             <div id="loginSection" class="logSection" style="display: none;">
