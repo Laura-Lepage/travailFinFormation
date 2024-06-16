@@ -175,36 +175,39 @@ header{
     }
 }
 .arrow{
-    width: 150px;
-    rotate: -60deg;
+    width: 200px;
+    rotate: -65deg;
     position: absolute;
-    top: 60%;
-    left: 2%;
+    top: 72%;
+    left: 1%;
+    @media screen and (min-width: 720px){
+        left: 7%;
+        z-index: 1;
+    }   
     @media screen and (min-width: 820px){
         width: 250px;
         top: 68%;
         left: -1%;
-        z-index: 1;
         rotate: -105deg;
     }   
     @media screen and (min-width: 1024px){
         top: 77%;
-        left: 11%;
+        left: 7%;
         rotate: -125deg;
     }  
     @media screen and (min-width: 1400px){
         top: 80%;
-        left: 15%;
+        left: 13%;
         rotate: -145deg;
          
     } 
     @media screen and (min-width: 1500px){
-        left: 17%; 
+        left: 15%; 
     }
     @media screen and (min-width: 1670px){
         width: 250px;
         top: 81%;
-        left: 17%;
+        left: 16%;
         rotate: 205deg;
     }  
 }
@@ -215,7 +218,7 @@ header{
 }
 
 .blinking {
-    animation: blink 1s 5;
+    animation: blink 1s 3;
 }
 // .textbeforebtn{
 //     text-align: center;

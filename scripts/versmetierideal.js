@@ -109,7 +109,7 @@ function handleAnswer(questionId, answer) {
     if (nextId === 'result') {
         showResult(question.result, question.explanation, question.possibilities, question.conclusion);
     } else if (nextId === 'endQuizNo') {
-        endQuiz("Oups ! Le domaine IT n'est peut-être pas fait pour toi. Je t'invite à réserver une session gratuite pour explorer d'autres voies ensemble.");
+        endQuiz("Oups ! Le domaine IT n'est peut-être pas fait pour toi. Je t'invite à réserver une session gratuite de 30 minutes pour explorer d'autres voies ensemble.");
     } else if (nextId.startsWith('endQuiz')) {
         eval(nextId);
     } else {

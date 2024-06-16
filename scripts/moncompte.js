@@ -70,8 +70,9 @@ async function afficherResultatsUtilisateur(userId) {
                 <p>${data.explanation}</p>
                 <p>${data.possibilities.map(p => `${p}<br>`).join('')}</p>
                 <p>${data.conclusion}</p>
+                <p class="resultCompteBold">Je t'invite à réserver une session gratuite de 30 minutes pour en discuter ensemble.</p>
             </div>
-            <a href="prendreunrendezvous.html" class="btnCompte">Je réserve mon coaching</a>
+            <a href="prendreunrendezvous.html" class="btnCompte">Réserve ton coaching</a>
         `;
 
         // Stocker un indicateur dans localStorage pour indiquer que l'utilisateur a des résultats
@@ -89,7 +90,7 @@ async function afficherResultatsUtilisateur(userId) {
                 <p>Il semble que tu n'as pas encore répondu au questionnaire. Aucun résultat n'a été trouvé sur ton compte.</p>
                 <p>Si tu souhaites découvrir les opportunités qui t'attendent dans le monde du numérique, je t'invite à cliquer sur le bouton ci-dessous.</p>
             </div>
-            <a href="chargement.html" class="loadLink btnCompte">Vers ton métier idéal</a>
+            <a href="chargement.html" class="loadLink btnCompte">Vers ton métier numérique idéal</a>
 
 
         `;

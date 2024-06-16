@@ -70,19 +70,29 @@
 //Partie Résultat
 .result{
     display:none;
-    width: 70%;
+    width: 100%;
     @include absmiddle;
     border-radius: 20px;
     background-color: #fff;
-    box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
     border:none;
+    @media screen and (min-width: 1235px){
+        box-shadow: 5px 5px 5px 5px rgb(93, 18, 59, 0.5);
+        width: 70%;
+       
+        
+    }   
     .resultBox{
         display: flex;
         width: 100%;
         text-align: center; 
     }
     .pamBossImg{
-        width: 30%;
+        display: none;
+        
+        @media screen and (min-width: 1235px){
+            width: 30%;
+            display: flex;
+        }   
         img{
             border-top-left-radius: 20px;
             border-bottom-left-radius: 20px;
@@ -93,7 +103,11 @@
     }
     .resultProfilBox{
         position: relative;
-        width: 70%;
+        width: 100%;
+        @media screen and (min-width: 1235px){
+            width: 70%;
+            
+        }   
         .resultProfilBoxCenter{
             @include absmiddle;
             width: 80%;
