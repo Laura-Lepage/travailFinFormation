@@ -2,31 +2,31 @@
 [
     {
         "id": "question1",
-        "text": "Aimes-tu travailler avec des ordinateurs et des technologies modernes?",
+        "text": "Aimes-tu travailler avec des ordinateurs et des technologies modernes ?",
         "yes": "question2",
         "no": "endQuizNo"
     },
     {
         "id": "question2",
-        "text": "As-tu de l'intérêt pour la création de sites web et le développement de logiciels?",
+        "text": "As-tu de l'intérêt pour la création de sites web et le développement de logiciels ?",
         "yes": "question3",
         "no": "question6"
     },
     {
         "id": "question3",
-        "text": "Es-tu attiré(e) par l'aspect visuel et interactif des sites web?",
+        "text": "Es-tu attiré(e) par l'aspect visuel et interactif des sites web ?",
         "yes": "question4",
         "no": "question6"
     },
     {
         "id": "question4",
-        "text": "Te vois-tu écrire du code et résoudre des problèmes techniques?",
+        "text": "Te vois-tu écrire du code et résoudre des problèmes techniques ?",
         "yes": "question5",
         "no": "question6"
     },
     {
         "id": "question5",
-        "text": "Te sens-tu à l'aise à l'idée d'apprendre des langages de programmation comme HTML, CSS, et JavaScript?",
+        "text": "Te sens-tu à l'aise à l'idée d'apprendre des langages de programmation comme HTML, CSS, et JavaScript ?",
         "yes": "result",
         "no": "question6",
         "result": "Web Developer",
@@ -42,25 +42,25 @@
     },
     {
         "id": "question6",
-        "text": "Aimes-tu analyser des données et trouver des tendances?",
+        "text": "Aimes-tu analyser des données et trouver des tendances ?",
         "yes": "question7",
         "no": "question10"
     },
     {
         "id": "question7",
-        "text": "Aimes-tu créer des visuels clairs et percutants pour aider à la prise de décision?",
+        "text": "Aimes-tu créer des visuels clairs et percutants pour aider à la prise de décision ?",
         "yes": "question8",
         "no": "question10"
     },
     {
         "id": "question8",
-        "text": "Aimes-tu appliquer des techniques statistiques avancées pour prédire des tendances et traduire les résultats en recommandations claires?",
+        "text": "Aimes-tu appliquer des techniques statistiques avancées pour prédire des tendances et traduire les résultats en recommandations claires ?",
         "yes": "question9",
         "no": "question10"
     },
     {
         "id": "question9",
-        "text": "Te sens-tu à l'aise à l'idée d'utiliser des outils comme SQL, Python ou Excel pour travailler avec des données?",
+        "text": "Te sens-tu à l'aise à l'idée d'utiliser des outils comme SQL, Python ou Excel pour travailler avec des données ?",
         "yes": "result",
         "no": "question10", 
         "result": "Data Analyst",
@@ -76,25 +76,25 @@
     },
     {
         "id": "question10",
-        "text": "Es-tu passionné(e) par le marketing digital et les stratégies en ligne?",
+        "text": "Es-tu passionné(e) par le marketing digital et les stratégies en ligne ?",
         "yes": "question11",
         "no": "question14"
     },
     {
         "id": "question11",
-        "text": "Te vois-tu planifier et exécuter des campagnes de marketing digital pour attirer et engager un public cible?",
+        "text": "Te vois-tu planifier et exécuter des campagnes de marketing digital pour attirer et engager un public cible ?",
         "yes": "question12",
         "no": "question14"
     },
     {
         "id": "question12",
-        "text": "Es-tu intéressé(e) par produire du contenu attractif et pertinent pour attirer une audience et promouvoir des produits ou services?",
+        "text": "Es-tu intéressé(e) par produire du contenu attractif et pertinent pour attirer une audience et promouvoir des produits ou services ?",
         "yes": "question13",
         "no": "question14"
     },
     {
         "id": "question13",
-        "text": "Te sens-tu à l'aise de travailler avec des outils comme les réseaux sociaux mais aussi Google Analytics et SEO afin d'améliorer la visibilité en ligne?",
+        "text": "Te sens-tu à l'aise de travailler avec des outils comme les réseaux sociaux mais aussi Google Analytics et SEO afin d'améliorer la visibilité en ligne ?",
         "yes": "result",
         "no": "question14",
         "result": "Digital Marketer",
@@ -110,26 +110,26 @@
     },
     {
         "id": "question14",
-        "text": "Es-tu intéressé(e) par la création de designs attrayants et fonctionnels pour des sites web?",
+        "text": "Es-tu intéressé(e) par la création de designs attrayants et fonctionnels pour des sites web ?",
         "yes": "question15",
         "no": "question18"
     },
     {
         "id": "question15",
-        "text": "Trouves-tu important de concevoir des interfaces intuitives et une expérience fluide pour garantir une bonne expérience des utilisateurs?",
+        "text": "Trouves-tu important de concevoir des interfaces intuitives et une expérience fluide pour garantir une bonne expérience des utilisateurs ?",
         "yes": "question16",
         "no": "question18"
     },
     {
         "id": "question16",
-        "text": "Te sens-tu à l'aise de présenter et de justifier tes choix de design auprès des parties prenantes et des clients?",
+        "text": "Te sens-tu à l'aise de présenter et de justifier tes choix de design auprès des parties prenantes et des clients ?",
         "yes": "question17",
         "no": "question18"
     },
 
     {
         "id": "question17",
-        "text": "Te sens-tu à l'aise à l'idée d'utiliser des outils comme Adobe Photoshop, Illustrator ou Figma pour concevoir des maquettes et des prototypes?",
+        "text": "Te sens-tu à l'aise à l'idée d'utiliser des outils comme Adobe Photoshop, Illustrator ou Figma pour concevoir des maquettes et des prototypes ?",
         "yes": "result",
         "no": "question18",
         "result": "Web Designer",
@@ -151,19 +151,19 @@
     },
     {
         "id": "question19",
-        "text": "Es-tu intéressé(e) d'analyser des systèmes pour trouver et corriger des vulnérabilités de sécurité?",
+        "text": "Es-tu intéressé(e) d'analyser des systèmes pour trouver et corriger des vulnérabilités de sécurité ?",
         "yes": "question20",
         "no": "question22"
     },
     {
         "id": "question20",
-        "text": "Te sens-tu à l'aise de rédiger des rapports détaillés sur les incidents de sécurité et les actions correctives prises?",
+        "text": "Te sens-tu à l'aise de rédiger des rapports détaillés sur les incidents de sécurité et les actions correctives prises ?",
         "yes": "question21",
         "no": "question22"
     },
     {
         "id": "question21",
-        "text": "Es-tu motivé(e) de former des employés sur les meilleures pratiques en matière de sécurité et de promouvoir une culture de la sécurité au sein d'une organisation?",
+        "text": "Es-tu motivé(e) de former des employés sur les meilleures pratiques en matière de sécurité et de promouvoir une culture de la sécurité au sein d'une organisation ?",
         "yes": "result",
         "no": "question22",
         "result": "Cybersecurity Specialist",
@@ -179,25 +179,25 @@
     },
     {
         "id": "question22",
-        "text": "Es-tu intéressé(e) d'organiser, de coordonner des projets et d'élaborer des plans détaillés pour atteindre des objectifs?",
+        "text": "Es-tu intéressé(e) d'organiser, de coordonner des projets et d'élaborer des plans détaillés pour atteindre des objectifs ?",
         "yes": "question23",
         "no": "end"
     },
     {
         "id": "question23",
-        "text": "Tu sens-tu capable de diriger et de motiver les membres d'une équipe pour assurer l'accomplissement des tâches dans les délais impartis?",
+        "text": "Tu sens-tu capable de diriger et de motiver les membres d'une équipe pour assurer l'accomplissement des tâches dans les délais impartis ?",
         "yes": "question24",
         "no": "end"
     },
     {
         "id": "question24",
-        "text": "Es-tu intéressé(e) d'apprendre des méthodes de gestion de projet telles qu'Agile ou Scrum afin d'atteindre efficacement des objectifs fixés tout en respectant les contraintes budgétaires?",
+        "text": "Es-tu intéressé(e) d'apprendre des méthodes de gestion de projet telles qu'Agile ou Scrum afin d'atteindre efficacement des objectifs fixés tout en respectant les contraintes budgétaires ?",
         "yes": "question25",
         "no": "end"
     },
     {
         "id": "question25",
-        "text": "Te sens-tu à l'aise de faciliter la communication entre les membres d'une équipe, les parties prenantes et les clients afin d'assurer la compréhension et la satisfaction?",
+        "text": "Te sens-tu à l'aise de faciliter la communication entre les membres d'une équipe, les parties prenantes et les clients afin d'assurer la compréhension et la satisfaction ?",
         "yes": "result",
         "no": "end",
         "result": "Project Manager",
