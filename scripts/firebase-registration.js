@@ -73,6 +73,32 @@ async function saveName(userId, firstname){
 //     }
 // }
 
+// Fonction pour ajouter un abonné via la fonction Netlify
+async function addSubscriber(email, firstName, lastName) {
+    const url = 'netlify/functions/addSubscriber';
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, firstName, lastName })
+        });
+
+        if (response.ok) {
+            console.log(`Successfully added ${email} to the Mailjet list.`);
+        } else {
+            const data = await response.json();
+            throw new Error(`Failed to add subscriber: ${data.message}`);
+        }
+    } catch (error) {
+        console.error('Error adding subscriber:', error.message);
+        throw error;
+    }
+}
+
+
 // Variables pour la gestion de l'affichage de l'inscription et connexion
 let inscriptionPartLink = document.querySelector('#signupLink')
 let connexionPartLink = document.querySelector('#loginLink')
@@ -131,8 +157,8 @@ document.querySelector('#signupForm').addEventListener('submit', async function(
         await saveName(user.uid, firstname)
         localStorage.setItem('userLoggedIn', 'true')
 
-        // // Ajouter l'utilisateur à Mailjet
-        // await addSubscriber(email, firstname, '')
+        // Ajouter l'utilisateur à Mailjet
+        await addSubscriber(email, firstname, '')
 
         // Redirection après l'inscription
         window.location.href = 'moncompte.html'
